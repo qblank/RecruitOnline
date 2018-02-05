@@ -5,17 +5,18 @@
 	
 <struts>
 	 <!-- 默认访问页面 -->
-    <package name="default" extends="struts-default" namespace="/">
+    <!-- <package name="default" extends="struts-default" namespace="/">
         <default-action-ref name="default"/>
         <action name="default">
             <result>/index.html</result>
         </action>
-    </package>
+    </package> -->
     <!-- 用户Action管理 -->
-	<package name="user" extends="struts-default" namespace="/">
-		<!-- 回到主页 -->
+	<!-- 用户模块 -->
+	<include file="cn/qblank/user/action/userAction.xml"></include>
+	<!-- <package name="index" extends="struts-default" namespace="/">
 		<action name="index" class="userAction" method="index">
 			<result name="success">/index.html</result>
 		</action>
-	</package>
+	</package> -->
 </struts>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	
+<struts>
+    <!-- 用户Action管理 -->
+	<package name="user" extends="struts-default" namespace="/" strict-method-invocation="false">
+		<action name="user_*" class="userAction" method="{1}">
+			<!-- 登录成功页面 -->
+			<result name="success">/index.html</result>
+			<!-- 访问登录页面 -->
+			<result name="loginJsp">html/login.html</result>
+			<!-- 访问注册页面 -->
+			<result name="registerJsp">html/register.html</result>
+			<!-- 注册成功 -->
+			<result name="register" type="redirectAction">user_loginJsp.action</result>
+		</action>
+	</package>
+</struts>

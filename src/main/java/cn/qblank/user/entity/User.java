@@ -16,17 +16,26 @@ public class User {
 	private Integer id;
 	private String username;
 	private String pwd;
+	private String phone;
 	private Integer authority;
 	private Date registerTime;
-	public User(Integer id, String username, String pwd, Integer authority, Date registerTime) {
-		this.id = id;
+	
+	
+	public User(String username, String pwd, String phone, Integer authority, Date registerTime) {
 		this.username = username;
 		this.pwd = pwd;
+		this.phone = phone;
 		this.authority = authority;
 		this.registerTime = registerTime;
 	}
 	public User() {
 		
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 	public Integer getId() {
 		return id;
@@ -60,8 +69,8 @@ public class User {
 	}
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", pwd=" + pwd + ", authority=" + authority
-				+ ", registerTime=" + registerTime + "]";
-	} 
+		return "User [id=" + id + ", username=" + username + ", pwd=" + pwd + ", phone=" + phone + ", authority="
+				+ authority + ", registerTime=" + registerTime + "]";
+	}
 	
 }
