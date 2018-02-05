@@ -1,0 +1,55 @@
+.login_wrap{
+    width: 400px;
+    height: 250px;
+    margin: 150px auto;
+    background-color: #FFFFFF;
+    opacity: 0.6;
+    z-index: 2;
+    position: relative;
+    display:none;
+}
+.login_wrap .title{
+    font: 700 25px "Microsoft Yahei";
+    color: #444;
+    position: absolute;
+    clear: both;
+    left: 170px;
+}
+.login_wrap .content{
+    margin-top: 50px;
+    margin-left:80px;
+    color: #333;
+    font: 14px "Microsoft Yahei";
+    float: left;
+}
+.login_wrap .content i{
+    font-size: 20px;
+}
+.login_wrap .content a{
+    color: #59B759;
+    text-decoration: none;
+}
+
+.login_wrap .content input[type="text"],input[type="password"]{
+    height: 30px;
+}
+
+.login_wrap .phoneMsg,.login_wrap .pwdMsg{
+    width: 100px;
+    height: 20px;
+    color: #FC8E00;
+    font: 10px "Microsoft Yahei";
+}
+
+/*提交按钮*/
+.login_wrap .content .login_btn{
+    width: 108px;
+    height: 31px;
+    background-color: #59B759;
+    border: 1px solid #59B759;
+    color: #FFFFFF;
+    cursor: pointer;
+    position: absolute;
+    left: 130px;
+}
+

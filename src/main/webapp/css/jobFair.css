@@ -1,0 +1,76 @@
+/*招聘会*/
+.jobFairwrap{
+    width: 780px;
+    height: 580px;
+    border: 1px solid #aaa;
+    margin: 30px auto;
+}
+.jobFairwrap .search_tab{
+    width: 719px;
+    height: 114px;
+    margin: 0 auto;
+}
+.jobFairwrap .search_tab .blank{
+    height: 15px;
+    width: 719px;
+    border-top: 1px solid #aaa;
+}
+.jobFairwrap .search_tab .search_box{
+    height: 100px;
+}
+
+.jobFairwrap .search_tab .search_box .search_sub{
+    background-image: linear-gradient(to bottom,#FFA13F,#FF7602);
+    border: 1px solid #FF7602;
+    cursor: pointer;
+    width: 118px;
+    height: 35px;
+    color: white;
+    font: 16px "Microsoft Yahei";
+    line-height: 10px;
+}
+/*
+.jobFairwrap .search_tab .search_box .datePicker{
+    width: 93px;
+    height: 35px;
+    background-image: linear-gradient(to bottom, #ffffff, #F0F0F0);
+    cursor: pointer;
+    font: 15px "Microsoft Yahei";
+    float: left;
+    margin-top: 8px;
+    margin-left: 13px;
+}*/
+
+/*.jobFairwrap .search_tab .search_box .line{
+    float: left;
+    line-height: 50px;
+    margin-left: 5px;
+}*/
+
+/*招聘会列表*/
+.jobFairwrap .jobFairList{
+    width: 749px;
+}
+.jobFairwrap .jobFairList ul li{
+    float: left;
+    width: 300px;
+    height: 127px;
+    padding-left: 50px;
+    padding-top: 30px;
+}
+.jobFairwrap .jobFairList .clearFix{
+    width: 344px;
+}
+.jobFairwrap .jobFairList .clearFix .btn_depart{
+    /*background-color: #80D35B;*/
+    color: white;
+    width: 95px;
+    height: 30px;
+    border: 1px solid #80D35B;
+    cursor: pointer;
+    background-image: linear-gradient(to bottom,#91e06d,#5eb937);
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+}
+.jobFairwrap .jobFairList .clearFix .btn_depart:hover{
+    background-image: linear-gradient(to bottom, #48e028, #25b915);
+}

@@ -1,0 +1,77 @@
+/*简历预览css*/
+.previewMain{
+    width: 990px;
+    border: 1px solid #E6E6E6;
+    margin: 100px auto;
+}
+/*上方*/
+.previewMain .preview_top{
+    width: 100%;
+}
+
+.previewMain .preview_top_left{
+    float:left;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+.previewMain .preview_top_right{
+    margin-right: 30px;
+    margin-top: 30px;
+}
+.previewMain .preview_top_right .operate{
+    width: 252px;
+    height: 39px;
+    float: right;
+    font: 18px/39px "Microsoft Yahei";
+    text-align: center;
+}
+.previewMain .preview_top_right .operate span{
+    border: 1px solid #27B3E9;
+    width: 120px;
+    height: 39px;
+    display: inline-block;
+    color: #595757;
+    cursor: pointer;
+}
+.previewMain .preview_top_right .operate span i{
+    color: #27B3E9;
+}
+/*基本个人信息*/
+.previewMain .per_basic{
+    padding: 29px 0 31px 50px;
+    border-top: 1px dashed #E6E6E6;
+}
+.previewMain .per_basic .per_photo{
+    border: 1px solid #aaa;
+    width: 108px;
+    height: 144px;
+}
+.previewMain .per_basic .per_basicInfo{
+    font-size: 14px;
+    color: #595757;
+    line-height: 18px;
+}
+.previewMain .per_basic .per_basicInfo .desTitle{
+    color: #BCA9BB;
+}
+/*预览信息*/
+.previewMain .pre_info{
+    width: 970px;
+}
+.previewMain .pre_info .per_title{
+    background-color: #E7E7E7;
+    padding-left: 20px;
+    width: 100%;
+    height: 30px;
+    font: 18px/30px "Microsoft Yahei";
+    color: #595757;
+}
+.previewMain .pre_info .per_infoCont{
+    color: #595757;
+    font-size: 10px;
+    padding: 30px;
+    line-height: 30px;
+}
+.previewMain .pre_info .per_infoCont .pre_title{
+    color: #BCA9BB;
+}

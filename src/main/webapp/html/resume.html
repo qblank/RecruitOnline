@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>简历模板页面</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/resume.css">
+    <link rel="stylesheet" href="../fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/goodinserter/jquery.cxcalendar.css">
+</head>
+<body>
+    <div class="resumeWrap">
+        <div class="leftResume">
+            <div class="resumeTitle">
+                <span>个人简历</span>
+            </div>
+            <div class="resumeMain">
+                <div class="tabWrap">
+                    <div class="tabTitle">
+                        <h3 class="dib">
+                            个人信息
+                            <span>(必填)</span>
+                        </h3>
+                        <p>详尽的个人信息能让企业更快的了解您</p>
+                        <div class="tabOperate" id="person_edit">
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <!--可编辑表单-->
+                    <div class="tabMain"  id="person_info">
+                        <form action="">
+                            <div class="itemWrap">
+                                <div class="itemTitle">
+                                    <i class="icon_must">*&nbsp;</i>
+                                    姓名
+                                </div>
+                                <div class="itemCont">
+                                    <input type="text" class="" maxlength="40">
+                                </div>
+                            </div>
+                            <div class="itemWrap">
+                                <div class="itemTitle">
+                                    <i class="icon_must">*&nbsp;</i>
+                                    性别
+                                </div>
+                                <div class="itemCont">
+                                    <select name="" id="">
+                                        <option value="">--请选择--</option>
+                                        <option value="man" selected>男</option>
+                                        <option value="woman">女</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="itemWrap">
+                                <div class="itemTitle">
+                                    <i class="icon_must">*&nbsp;</i>
+                                    出生日期
+                                </div>
+                                <div class="itemCont">
+                                    <input id="date_e" name="mydate" type="text" readonly>
+                                </div>
+                            </div>
+                            <div class="itemWrap">
+                                <div class="itemTitle">
+                                    <i class="icon_must">*&nbsp;</i>
+                                    证件号码
+                                </div>
+                                <div class="itemCont">
+                                    <input type="text" class="" maxlength="40">
+                                </div>
+                            </div>
+                            <div class="itemWrap">
+                                <div class="itemTitle">
+                                    <i class="icon_must">*&nbsp;</i>
+                                    现居住地
+                                </div>
+                                <div class="itemCont">
+                                    <input type="text" class="" maxlength="40">
+                                </div>
+                            </div>
+                            <div class="itemWrap">
+                                <div class="itemTitle">
+                                    <i class="icon_must">*&nbsp;</i>
+                                    毕业时间
+                                </div>
+                                <div class="itemCont">
+                                    <input id="date_gradual" name="mydate" type="text" readonly>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="tabWrap">
+                    <div class="tabTitle">
+                        <h3 class="dib">
+                            联系方式
+                            <span>(必填)</span>
+                        </h3>
+                        <p>详尽的个人信息能让企业更快的了解您</p>
+                        <div class="tabOperate" id="contact_edit">
+                            <i class="fa fa-pencil-square-o"></i>
+                        </div>
+                    </div>
+                    <!--可编辑表单-->
+                    <div class="tabMain" id="contact">
+                        <form action="">
+                            <div class="itemWrap">
+                                <div class="itemTitle">
+                                    <i class="icon_must">*&nbsp;</i>
+                                    手机号码
+                                </div>
+                                <div class="itemCont">
+                                    <input type="text" class="" maxlength="40">
+                                </div>
+                            </div>
+                            <div class="itemWrap">
+                                <div class="itemTitle">
+                                    <i class="icon_must">*&nbsp;</i>
+                                    电子邮箱
+                                </div>
+                                <div class="itemCont">
+                                    <input type="text" class="" maxlength="40">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="tabWrap">
+                    <div class="tabTitle">
+                        <h3 class="dib">
+                            教育经历
+                            <span>(必填)</span>
+                        </h3>
+                        <p>详尽的个人信息能让企业更快的了解您</p>
+                        <div class="tabOperate">
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <!--可编辑表单-->
+                    <div class="tabMain">
+
+                    </div>
+                </div>
+                <div class="tabWrap">
+                    <div class="tabTitle">
+                        <h3 class="dib">
+                            求职意向
+                            <span>(必填)</span>
+                        </h3>
+                        <p>详尽的个人信息能让企业更快的了解您</p>
+                        <div class="tabOperate">
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <!--可编辑表单-->
+                    <div class="tabMain">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rightResume">
+            <div class="resumeTop"></div>
+            <a href="#" class="btnPreview">预览简历</a>
+            <div class="btnMenu" id="btnMenu">
+                <ul>
+                    <li class="current">
+                        <i class="fa fa-user-o">&nbsp;&nbsp;个人信息</i>
+                    </li>
+                    <li><i class="fa fa-address-card">&nbsp;&nbsp;联系方式</i></li>
+                    <li><i class="fa fa-graduation-cap">&nbsp;&nbsp;教育经历</i></li>
+                    <li><i class="fa fa-rocket"></i>&nbsp;&nbsp;求职意向</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</body>
+<script src="../js/jquery-1.8.2.js"></script>
+<script src="../js/goodinserter/jquery.cxcalendar.js"></script>
+<script src="../js/goodinserter/jquery.cxcalendar.languages.js"></script>
+<script src="../js/timePicker.js"></script>
+<script src="../js/resume.js"></script>
+</html>

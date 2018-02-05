@@ -1,0 +1,75 @@
+.jobtetail_wrap{
+    width: 800px;
+    height: 670px;
+    border: 1px solid #C5C5C5;
+    margin: 20px auto;
+}
+
+.jobtetail_wrap .jobdetailInfowrap{
+    width: 720px;
+    height: 229px;
+    margin-left: 10px;
+    border-bottom: 1px dashed #dddde5;
+}
+
+.jobtetail_wrap .jobdetailInfowrap ul li{
+    margin-top: 30px;
+    float: left;
+}
+
+.jobtetail_wrap .jobdetailInfowrap .cJobDetailTit{
+    width: 66px;
+    font: 14px "Microsoft Yahei";
+    color: #999999;
+}
+
+.jobtetail_wrap .jobdetailInfowrap .marb{
+    width: 165px;
+    font: 14px "Microsoft Yahei";
+}
+
+.jobtetail_wrap .postjob{
+    width: 98px;
+    height: 32px;
+    background-color: #59B759;
+    border: 1px solid #59B759;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 20px;
+}
+
+.jobtetail_wrap .postjob:hover{
+    background-color: #05b718;
+}
+
+.jobtetail_wrap .jobdetailtab ul{
+    /*border-bottom: 1px solid #aaa;*/
+}
+.jobtetail_wrap .jobdetailtab ul li a{
+    float: left;
+    width: 100px;
+    height: 30px;
+    font: 700 16px/30px "Microsoft Yahei";
+    text-align: center;
+    /*border-top: 1px solid #aaa;
+    border-right: 1px solid #aaa;
+    border-left: 1px solid #aaa;*/
+    background-color: #fff;
+    text-decoration: none;
+    z-index : 10;
+    color: #000;
+    margin-left: 5px;
+    margin-bottom: -2px;
+}
+
+.jobtetail_wrap .jobtetailtabdesc{
+    width: 707px;
+    border-top: 1px solid #aaa;
+    float: left;
+    margin-left: 5px;
+    z-index: -1;
+}
+.jobtetail_wrap .jobtetailtabdesc p{
+    margin: 30px;
+}

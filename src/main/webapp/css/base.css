@@ -1,0 +1,36 @@
+/**
+ * 用于抽取公用的css样式
+ */
+body{font:14px/1.7 tahoma,'\5fae\8f6f\96c5\9ed1',sans-serif;}
+h1,h2,h3{font-size:36px;line-height:1;}
+h2{font-size:24px;}
+h3{font-size:18px;}
+fieldset legend{font-weight:bold;font-size:16px;}
+input,select,button{padding:0.5em;}
+a{color:#06f;text-decoration:none;}
+a:hover{color:#00f;}
+
+.wrap{width:800px;margin:0 auto;padding:20px 40px;border-radius:8px;background:#fff;box-shadow:0 0 10px rgba(0,0,0,0.5);}
+
+ul,dl,ol{
+    list-style:none;
+    margin: 0;
+    padding: 0;
+}
+
+/*加粗*/
+.weight{
+    font-weight: bolder;
+}
+/*灰色*/
+.gray{
+    color: #999;
+}
+/*14号字体*/
+.font14{
+    font-size:14px;
+}
+/*行高19*/
+.lh19{
+    line-height: 19px;
+}

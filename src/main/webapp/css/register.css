@@ -1,0 +1,59 @@
+.register_wrap{
+    width: 500px;
+    height: 450px;
+    margin: 50px auto;
+    background-color: #FFFFFF;
+    opacity: 0.6;
+    z-index: 2;
+    position: relative;
+    color:#333;
+}
+.register_wrap .title{
+    position: absolute;
+    left: 240px;
+    font: 700 25px "Microsoft Yahei";
+    color: #333;
+}
+
+.register_wrap form{
+    height: 300px;
+    width: 460px;
+    margin-top: 50px;
+    margin-left: 50px;
+    float: left;
+}
+
+.register_wrap .content table{
+    text-align: right;
+    color: #333;
+}
+.register_wrap .content table tr td{
+    height: 78px;
+}
+
+.register_wrap .content table tr td input[type="text"],input[type="password"]{
+    width: 200px;
+    height: 30px;
+}
+.register_wrap .content table tr td a{
+    color: #59B759;
+}
+.register_wrap .content span{
+    width: 100px;
+    font: 14px "Microsoft Yahei";
+    text-align: right;
+    margin-left: 30px;
+}
+
+.register_wrap .content .login_btn{
+    width: 265px;
+    height: 45px;
+    font: 700 20px "Microsoft Yahei";
+    color: #FFFFFF;
+    background-color: #59B759;
+    border: 1px solid #59B759;
+    cursor: pointer;
+    float: left;
+    margin-left: 50px;
+}
+

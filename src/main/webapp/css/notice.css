@@ -1,0 +1,93 @@
+/*通知界面css样式*/
+.mainWrapper{
+    width: 990px;
+    height: 574px;
+    border: 1px solid #DCDDDE;
+    margin: 20px auto;
+    box-shadow: 0 -1px 5px rgba(184,184,184,0.75);
+}
+/*左边盒子*/
+.mainWrapper .leftWrapper{
+    width: 171px;
+    height: 100%;
+    border-right: 1px solid #DCDDDE;
+    background-color: #F2F4F5;
+    float: left;
+}
+
+.mainWrapper .leftWrapper .userImageWrapper{
+    width: 100%;
+    height: 138px;
+    float: left;
+    border-bottom: 1px solid #DCDDDE;
+    margin-top: 10px;
+}
+.mainWrapper .leftWrapper .userImageWrapper .user_img{
+    width: 103px;
+    height: 103px;
+    border: 1px solid #DCDDDE;
+    margin: 0 auto;
+}
+.mainWrapper .leftWrapper .userImageWrapper h4{
+    text-align: center;
+    margin-top: 10px;
+}
+.mainWrapper .leftWrapper .leftNav{
+    float: left;
+    margin-top: 30px;
+    border-bottom: 1px solid #DCDDDE;
+}
+.mainWrapper .leftWrapper .leftNav li{
+    width: 100%;
+    height: 40px;
+    float: left;
+    text-align: center;
+    line-height: 40px;
+}
+.mainWrapper .leftWrapper .leftNav li a{
+    color: #333;
+    font-size: 16px;
+}
+.mainWrapper .leftWrapper .leftNav li:hover{
+    background-color: #D5E1EC;
+}
+.mainWrapper .leftWrapper .leftNav .currSel{
+    font-weight: bold;
+    color: #4483bf;
+}
+/*右边*/
+.mainWrapper .rightWrapper{
+    float: left;
+    width: 818px;
+    height: 57px;
+}
+.mainWrapper .rightWrapper .topWrapper{
+    width: 100%;
+    height: 57px;
+    border-bottom: 2px solid #D5E1EC;
+    float: left;
+}
+.mainWrapper .rightWrapper .topWrapper .tabWrapper ul{
+    margin-left: 10px;
+}
+.mainWrapper .rightWrapper .topWrapper .tabWrapper ul li{
+    float: left;
+    width: 75px;
+    height: 25px;
+    border-top: 2px solid #ccc;
+    border-left: 2px solid #ccc;
+    border-right: 2px solid #ccc;
+    line-height: 25px;
+    background: #fff;
+    color: #336699;
+    margin-left: 5px;
+    text-align: center;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.mainWrapper .rightWrapper .topWrapper .tabWrapper ul .current{
+    height: 27px;
+    font-weight: bold;
+    color: #333;
+}

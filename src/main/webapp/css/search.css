@@ -1,0 +1,62 @@
+
+.search_bg{
+    height: 130px;
+    background-color: #F6F9FB;
+
+}
+/*统计在线职位*/
+.search_bg .job_num{
+    width: 344px;
+    height: 48px;
+    background-color: #EDF1F5;
+    float: left;
+    margin-top: 37px;
+    margin-left: 77px;
+}
+.job_num .pos{
+    text-decoration: none;
+    color: #6680B1;
+    font: 700 20px/48px "Microsoft Yahei";
+    float: left;
+    margin-left: 10px;
+}
+.job_num ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.job_num ul li{
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    float: right;
+    margin-right: 10px;
+    text-align: center;
+    font: 700 20px/30px "Microsoft Yahei";
+    margin-top: 10px;
+    color: #55B1E4;
+}
+/*搜索框*/
+
+.search_bg .sc_input{
+    margin-right:40px;
+    float: right;
+    margin-top: 38px;
+}
+.search_bg .search_input{
+    width: 568px;
+    height: 39px;
+    float: right;
+    border: 2px solid #55B1E4;
+}
+/*按钮*/
+.search_bg .sc_input .search{
+    width: 100px;
+    height: 43px;
+    background-color: #55B1E4;
+    color: white;
+    font:700 18px "Microsoft Yahei";
+    border: 1px solid #55B1E4;
+    cursor: pointer;
+    float: right;
+}
