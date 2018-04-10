@@ -50,7 +50,7 @@
 	                <div id="myMessage" class="myMessage">
 	                    <ul>
 	                        <li><a href="notice.html">通知</a></li>
-	                        <li><a href="${pageContext.request.contextPath }/user_noticeJsp.action">账号管理</a></li>
+	                        <li><a href="${pageContext.request.contextPath }/user_noticeJsp.action?pageId=2">账号管理</a></li>
 	                        <li><a href="${pageContext.request.contextPath }/user_withdraw.action">退出</a></li>
 	                    </ul>
 	                </div>

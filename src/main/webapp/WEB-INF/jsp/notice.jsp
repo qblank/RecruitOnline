@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="fontawesome/css/font-awesome.min.css">
 </head>
 <body>
+	<%@include file="./header.jsp" %>
     <div class="mainWrapper">
         <!--左边-->
         <div class="leftWrapper">
@@ -30,7 +31,7 @@
         </div>
         
         <!--右边-->
-        <c:if test="">
+        <c:if test="${true }">
 	        <div class="rightWrapper">
 	            <div class="topWrapper">
 	                <div class="tabWrapper">
@@ -44,7 +45,7 @@
         </c:if>
         
         <!-- 右下内容 -->
-        <c:if test="">
+        <c:if test="${true}">
 	        <div class="right_content">
 	              <form name="formC" id="formC">
 		              <ul class="nL_formbox">
@@ -76,6 +77,8 @@
 	        </div>
         </c:if>
     </div>
+    
+    <%@include file="./booter.jsp" %>
 </body>
 <script src="js/jquery-1.8.2.js"></script>
 <script src="js/notice.js"></script>
