@@ -1,48 +1,47 @@
-*{
-    padding: 0;
-    margin: 0;
-}
-body,ul,li{
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
 
-/*头部*/
+/*盒子*/
 .headerwrap{
     text-align: center;
     background-color: #FFFFFF;
     border-bottom: 1px solid #EDEDED;
+    margin-top: 0;
+    position: relative;
 }
 .headerwrap .nav{
     margin: 0 auto;
     height: 50px;
-    width: 80%;
+    width: 1348px;
     position: relative;
 }
-/*我的头像*/
-.headerwrap .nav .me{
-    border-radius: 50%;
-}
-.nav ul li{
-    display: inline-block;
+.headerwrap .nav ul li{
     width: 150px;
     font:500 16px/50px "Microsoft Yahei";
     float: left;
 }
-.nav ul li a{
+.headerwrap .nav ul li a{
     color: #666666;
 }
 .nav ul li a:hover{
     text-decoration: none;
     color: #55B1E4;
 }
-.nav .fa,.fa-home{
+.headerwrap .nav .fa,.fa-home{
     font-size: 30px;
     line-height: 51px;
 }
-/*我的校园信息*/
-.nav .compus{
+/*我*/
+.headerwrap .nav .me{
+    border-radius: 50%;
+    margin-top:10px;
+    float: left;
+}
+.headerwrap .nav .my_name{
+	margin-bottom:10px;
+	margin-left:10px;
+	float:left;
+}
+/*我的校园*/
+.headerwrap .nav .compus{
     width: 150px;
     height: 150px;
     position: absolute;
@@ -51,36 +50,50 @@ body,ul,li{
     border: 1px solid #EDEDED;
     display: none;
     text-align: center;
+    background-color: #fff;
+    z-index: 11;
 }
-.nav  ul{
+.headerwrap .nav  ul{
     margin: 0;
     padding: 0;
 }
-.nav .compus ul li{
+.headerwrap .nav .compus ul li{
     text-align: center;
     width: 150px;
 }
-.nav .compus ul li a .myConpus{
+/* .headerwrap .nav .compus ul li a .myConpus{
+	padding-top:20px;
+    line-height: 39px;
+} */
+.headerwrap .nav ul li .myConpus{
     line-height: 39px;
 }
-.nav .compus ul li:hover{
+
+#draw {
+	height:50px;
+}
+
+
+
+.headerwrap .nav .compus ul li:hover{
     background-color: #eee;
 }
-/*我的下拉框*/
-.nav .myMessage{
+/*我的信息*/
+.headerwrap .nav .myMessage{
     width: 150px;
     height: 150px;
     position: absolute;
-    left: 905px;
+    left: 870px;
+    background-color:#fff;
     top: 50px;
     border: 1px solid #EDEDED;
     display: none;
 }
-.nav .myMessage li{
+.headerwrap .nav .myMessage li{
     text-align: center;
     width: 150px;
 }
-.nav .myMessage li:hover{
+.headerwrap .nav .myMessage li:hover{
     background-color: #eee;
 }
 

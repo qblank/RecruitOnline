@@ -1,5 +1,5 @@
 /**
- * Created by Oliver on 2017/8/4.
+ * Created by evan on 2018/1/20.
  * 轮播图
  */
 $(document).ready(function(){
@@ -8,7 +8,7 @@ $(document).ready(function(){
     var width = picture.width();
     var arr = $("#arr");
     var pointlist = $("#pointList");
-    var points = pointlist.children();
+    var points = pointlist.children("li");
     var left = $("#left");
     var right = $("#right");
     var index = 0;

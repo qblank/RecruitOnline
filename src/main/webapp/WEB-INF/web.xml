@@ -1,28 +1,43 @@
-<?xml version="1.0" encoding="UTF-8"?>  
-<web-app version="2.5"  
-    xmlns="http://java.sun.com/xml/ns/javaee"  
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
-    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee  
-    http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">  
-      
-  <display-name>Archetype Created Web Application</display-name> 
-  <!-- 配置struts -->
-	<filter>
-		<filter-name>struts2</filter-name>
-		<filter-class>org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter</filter-class>
-	</filter>
-	<filter-mapping>
-		<filter-name>struts2</filter-name>
-		<url-pattern>*.action</url-pattern>
-	</filter-mapping>
-	<!-- 配置Spring -->
-	<!-- 指定Spring配置所在目录 -->
-	<context-param>
-		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:bean*.xml</param-value>
-	</context-param>
-	<!-- 配置Spring监听器 -->
-	<listener>
-		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-	</listener> 
-</web-app>  
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name>Archetype Created Web Application</display-name>
+  <!-- 配置登陆过滤器 -->
+  <filter>
+    <filter-name>LoginFilter</filter-name>
+    <filter-class>cn.qblank.filter.LoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>LoginFilter</filter-name>
+    <url-pattern>*.action</url-pattern>
+  </filter-mapping>
+  
+  <!-- struts2核心过滤器 -->
+  <filter>
+    <filter-name>struts2</filter-name>
+    <filter-class>org.apache.struts2.dispatcher.filter.StrutsPrepareAndExecuteFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>struts2</filter-name>
+    <url-pattern>*.action</url-pattern>
+  </filter-mapping>
+  <!-- 配置Spring -->
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath:bean*.xml</param-value>
+  </context-param>
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  
+  <!-- 配置404 -->
+  <error-page>
+  	<error-code>404</error-code>
+  	<location>/404.html</location>
+  </error-page>
+  
+  <!-- 配置500 -->
+  <error-page>
+  	<error-code>500</error-code>
+  	<location>/500.html</location>
+  </error-page>
+</web-app>

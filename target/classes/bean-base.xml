@@ -25,6 +25,10 @@
 		<property name="driverClass" value="${jdbc.driverClass}"></property>
 		<property name="user" value="${jdbc.user}"></property>
 		<property name="password" value="${jdbc.password}"></property>
+		<property name="initialPoolSize" value="${jdbc.initialPoolSize}"></property>
+		<property name="maxPoolSize" value="${jdbc.maxPoolSize}"></property>
+		<property name="maxStatements" value="${jdbc.maxStatements}"></property>
+		<property name="acquireIncrement" value="${jdbc.acquireIncrement}"></property>
 	</bean>
 	<!-- 配置sessionFactory -->
 	<bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">

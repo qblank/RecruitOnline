@@ -1,5 +1,6 @@
 package cn.qblank.user.entity;
 
+import java.io.Serializable;
 import java.sql.Date;
 
 import javax.persistence.Entity;
@@ -9,7 +10,7 @@ import javax.persistence.Id;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-public class User {
+public class User implements Serializable{
 	@Id
 	@GeneratedValue(generator = "id")
 	@GenericGenerator(name = "id" , strategy = "native")

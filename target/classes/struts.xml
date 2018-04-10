@@ -4,6 +4,7 @@
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 	
 <struts>
+	
 	 <!-- 默认访问页面 -->
     <!-- <package name="default" extends="struts-default" namespace="/">
         <default-action-ref name="default"/>
@@ -11,12 +12,9 @@
             <result>/index.html</result>
         </action>
     </package> -->
-    <!-- 用户Action管理 -->
+    
 	<!-- 用户模块 -->
 	<include file="cn/qblank/user/action/userAction.xml"></include>
-	<!-- <package name="index" extends="struts-default" namespace="/">
-		<action name="index" class="userAction" method="index">
-			<result name="success">/index.html</result>
-		</action>
-	</package> -->
+	<include file="cn/qblank/resume/action/resumeAction.xml"></include>
+	<include file="cn/qblank/job/action/jobAction.xml"></include>
 </struts>

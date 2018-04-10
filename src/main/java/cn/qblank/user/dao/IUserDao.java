@@ -12,4 +12,12 @@ public interface IUserDao {
 	 * 查询
 	 */
 	User Login(User user);
+	/**
+	 * 修改密码
+	 * @param oldPwd
+	 * @param newPwd
+	 * @param rePwd
+	 * @return
+	 */
+	boolean revisePwd(User user);
 }

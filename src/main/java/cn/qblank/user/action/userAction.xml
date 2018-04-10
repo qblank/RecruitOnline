@@ -2,19 +2,24 @@
 <!DOCTYPE struts PUBLIC
 	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
-	
 <struts>
     <!-- 用户Action管理 -->
 	<package name="user" extends="struts-default" namespace="/" strict-method-invocation="false">
 		<action name="user_*" class="userAction" method="{1}">
 			<!-- 登录成功页面 -->
-			<result name="success">/index.html</result>
+			<result name="success" type="redirectAction">index.action</result>
 			<!-- 访问登录页面 -->
-			<result name="loginJsp">html/login.html</result>
+			<result name="loginJsp">/WEB-INF/jsp/login.jsp</result>
 			<!-- 访问注册页面 -->
-			<result name="registerJsp">html/register.html</result>
+			<result name="registerJsp">/WEB-INF/jsp/register.jsp</result>
 			<!-- 注册成功 -->
 			<result name="register" type="redirectAction">user_loginJsp.action</result>
+			<!-- 进入通知界面 -->
+			<result name="notice">/WEB-INF/jsp/notice.jsp</result>
+			
+			<!-- 测试 -->
+			<result name="test">/WEB-INF/jsp/control/test.jsp</result>
 		</action>
 	</package>
+	
 </struts>

@@ -13,4 +13,7 @@ $(function(){
     //调用
     drawIt("#draw","#school","#compus");
     drawIt("#my","","#myMessage");
+    
+    
 });
+

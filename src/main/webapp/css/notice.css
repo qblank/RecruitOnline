@@ -55,6 +55,8 @@
     font-weight: bold;
     color: #4483bf;
 }
+
+
 /*右边*/
 .mainWrapper .rightWrapper{
     float: left;
@@ -91,3 +93,68 @@
     font-weight: bold;
     color: #333;
 }
+
+/* 右下内容 */
+.mainWrapper .right_content{
+	width: 700px;
+	height: 300px;
+	float: left;
+	margin: 50px auto;
+	padding-left:60px;
+}
+
+
+.mainWrapper .right_content form{
+	height: 250px;
+}
+
+.mainWrapper .right_content form ul li{
+	margin-top: 20px;
+	font-size:12px;
+}
+
+.mainWrapper .right_content form ul .nL_listName{
+	display: inline-block;
+    width: 60px;
+    text-align: right;
+    margin-right: 10px;
+    vertical-align: top;
+    line-height: 35px;
+    color: #666;
+}
+
+.mainWrapper .right_content form ul li img-x-validate-error{
+	background: url(../images/notice/tips_spirit.jpg) no-repeat scroll 0 4px transparent;
+}
+
+.mainWrapper .right_content form ul li .nL_validate_tips{
+	background: url(../images/notice/tips_spirit.jpg) no-repeat scroll 0 4px transparent;
+    background-position: 0 2px\9;
+    color: #FF6633;
+    padding-left: 12px;
+    color: #fc8e00;
+    vertical-align: middle;
+}
+
+.mainWrapper .right_content form  .revisePwd{
+	background-color: #9ecf36;
+	background-image: -webkit-linear-gradient(top, #91e06d, #5eb937);
+	border:1px solid #4D954D;
+	width:217px;
+	height:37px;
+	color:white;
+	cursor:pointer;
+	margin:30px;
+	border-radius: 10px;
+}
+
+.mainWrapper .right_content form  .revisePwd:hover{
+	background-color: #41993b;
+	background-image: -webkit-linear-gradient(top, #5cba5c, #51a351);
+	
+	/* #9ecf36 */
+}
+
+
+
+

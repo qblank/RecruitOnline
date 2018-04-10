@@ -26,5 +26,11 @@ public class UserServiceImpl implements IUserService{
 	public User Login(User user) {
 		return userDao.Login(user);
 	}
+
+	@Override
+	public boolean revisePwd(User user) {
+		return userDao.revisePwd(user);
+	}
+
 	
 }

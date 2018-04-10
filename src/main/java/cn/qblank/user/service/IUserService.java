@@ -13,4 +13,12 @@ public interface IUserService {
 	 * 登录
 	 */
 	User Login(User user);
+	/**
+	 * 修改密码
+	 * @param oldPwd
+	 * @param newPwd
+	 * @param rePwd
+	 * @return
+	 */
+	boolean revisePwd(User user);
 }

@@ -2,14 +2,14 @@ package cn.qblank.user.dao.impl;
 
 import java.util.List;
 
-import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Transactional;
 
-import cn.qblank.dao.IBaseDao;
 import cn.qblank.user.dao.IUserDao;
 import cn.qblank.user.entity.User;
 
@@ -29,9 +29,9 @@ public class UserDaoimpl  implements IUserDao{
 	@Override
 	public void saveUser(User user) {
 		template.save(user);
-		System.out.println("保存数据");
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public User Login(User user) {
 		String hql = "from User where username = ? and pwd = ? and authority = ?";
@@ -46,6 +46,13 @@ public class UserDaoimpl  implements IUserDao{
 			result = (User) q.list().get(0);
 		}
 		return result;
+	}
+	
+	@Transactional(isolation=Isolation.READ_COMMITTED)
+	@Override
+	public boolean revisePwd(User user) {
+		sessionFactory.getCurrentSession().update(user);
+		return true;
 	}
 	
 }

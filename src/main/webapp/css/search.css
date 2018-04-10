@@ -2,7 +2,7 @@
 .search_bg{
     height: 130px;
     background-color: #F6F9FB;
-
+    margin-top: 50px;
 }
 /*统计在线职位*/
 .search_bg .job_num{
@@ -45,7 +45,7 @@
 }
 .search_bg .search_input{
     width: 568px;
-    height: 39px;
+    height: 26px;
     float: right;
     border: 2px solid #55B1E4;
 }

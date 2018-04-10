@@ -73,8 +73,6 @@ $(function(){
 
         //获取所有的盒子
         var pros = document.getElementsByClassName("pro_nav");
-        console.log(pros.length);
-        pros[0].style.color = "green";
         for(var i = 0;i < pros.length;i++){
             pros[i].style.backgroundImage = "linear-gradient(to right,"+ colors[2*i] +"," + colors[2*i+1] +")";
         }

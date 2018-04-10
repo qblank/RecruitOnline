@@ -1,4 +1,5 @@
 /*简历部分*/
+
 .resumeWrap{
     width: 980px;
     margin: 20px auto;
@@ -67,6 +68,31 @@
 .resumeWrap .leftResume .resumeMain .tabWrap .tabMain .itemWrap{
     height: 34px;
     margin-top: 30px;
+}
+/* 确认取消按钮 */
+.resumeWrap .leftResume .resumeMain .tabWrap .tabMain .btnWrap{
+	text-align: center;
+	margin-top: 20px;
+}
+.resumeWrap .leftResume .resumeMain .tabWrap .tabMain .btnWrap a{
+	width: 94px;
+    height: 30px;
+    margin: 0 3px;
+    line-height: 30px;
+    text-align: center;
+    display: inline-block;
+}
+.resumeWrap .leftResume .resumeMain .tabWrap .tabMain .btnWrap .btnSure{
+	color: white;
+	border:1px solid #27b2e9;
+    background-color: #27b2e9;
+}
+.resumeWrap .leftResume .resumeMain .tabWrap .tabMain .btnWrap .btnCancel{
+	border:1px solid #e4e3e3;
+    color: #595757;
+}
+.resumeWrap .leftResume .resumeMain .tabWrap .tabMain .btnWrap .btnSure:hover{
+	background-color: #32C6FF;
 }
 .resumeWrap .leftResume .resumeMain .tabWrap .tabMain .itemTitle{
     text-align: right;

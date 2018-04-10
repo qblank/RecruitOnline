@@ -1,7 +1,7 @@
 .login_wrap{
     width: 400px;
-    height: 250px;
-    margin: 150px auto;
+    height: 300px;
+    margin: 100px auto;
     background-color: #FFFFFF;
     opacity: 0.6;
     z-index: 2;
@@ -53,3 +53,10 @@
     left: 130px;
 }
 
+.login_wrap .content .loginErr{
+	color:red;
+	font-size:14px;
+	float:left;
+	margin: 46px 35px;
+		
+}

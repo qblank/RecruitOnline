@@ -8,7 +8,7 @@ ul{
 }
 .content{
     width: 1249px;
-    margin: 0 auto;
+    margin: 55px auto;
 }
 /*左边导航栏*/
 /*左边的盒子*/
@@ -218,6 +218,11 @@ ul{
     height: 30px;
     cursor: pointer;
     margin-top: 7px;
+}
+
+.content .news .new dd .dd_content_wrap .btn_apply:hover{
+	background-color: #55b1e4;
+	color: white;
 }
 .content .news .new dd .news_info_text a{
     text-decoration: none;
