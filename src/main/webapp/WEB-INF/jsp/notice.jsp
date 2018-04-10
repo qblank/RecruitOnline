@@ -29,49 +29,52 @@
             </ul>
         </div>
         
-        
         <!--右边-->
-        <div class="rightWrapper">
-            <div class="topWrapper">
-                <div class="tabWrapper">
-                    <ul id="tabNav">
-                        <li class="current">还未开始</li>
-                        <li >已经结束</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        <c:if test="">
+	        <div class="rightWrapper">
+	            <div class="topWrapper">
+	                <div class="tabWrapper">
+	                    <ul id="tabNav">
+	                        <li class="current">还未开始</li>
+	                        <li >已经结束</li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+        </c:if>
         
         <!-- 右下内容 -->
-        <div class="right_content">
-              <form name="formC" id="formC">
-	              <ul class="nL_formbox">
-	                  <li>
-	                      <label for="" class="nL_listName">
-	                          旧密码</label>
-	                          <input type="password" id="oldPwdInp" name="oldPwd"/>
-	                          <span id="img-x-validate-1007" class="img-x-validate-error"></span>
-	                          <span id="oldpw" class="nL_validate_tips nL_validate_tips_l tip-x-validate-error">请输入你登录的密码</span>
-	                  </li>
-	                  <li>
-	                      <label for="" class="nL_listName">
-	                          新密码</label>
-	                          <input type="password" id="newPwdInp" name="newPwd">
-	                          <span id="img-x-validate-1008" class="img-x-validate-error"></span>
-	                          <span id="oldpn" class="nL_validate_tips nL_validate_tips_l tip-x-validate-error">密码为6-20位的字母、数字和下划线</span>
-	                  </li>
-	                  <li>
-	                      <label for="" class="nL_listName">
-	                          重复新密码</label>
-	                          <input type="password" id="repPwdInp" name="rePwd">
-	                          <span id="img-x-validate-1009" class="img-x-validate-error"></span>
-	                          <span id="oldpr" class="nL_validate_tips nL_validate_tips_l tip-x-validate-error">请再次输入密码</span>
-	                  </li>
-	              </ul>
-	              <button id="subbutton" type="button" class="revisePwd" id="revisePwd" onclick="revisePwd()">
-	                  确定修改</button>
-              </form>
-        </div>
+        <c:if test="">
+	        <div class="right_content">
+	              <form name="formC" id="formC">
+		              <ul class="nL_formbox">
+		                  <li>
+		                      <label for="" class="nL_listName">
+		                          旧密码</label>
+		                          <input type="password" id="oldPwdInp" name="oldPwd"/>
+		                          <span id="img-x-validate-1007" class="img-x-validate-error"></span>
+		                          <span id="oldpw" class="nL_validate_tips nL_validate_tips_l tip-x-validate-error">请输入你登录的密码</span>
+		                  </li>
+		                  <li>
+		                      <label for="" class="nL_listName">
+		                          新密码</label>
+		                          <input type="password" id="newPwdInp" name="newPwd">
+		                          <span id="img-x-validate-1008" class="img-x-validate-error"></span>
+		                          <span id="oldpn" class="nL_validate_tips nL_validate_tips_l tip-x-validate-error">密码为6-20位的字母、数字和下划线</span>
+		                  </li>
+		                  <li>
+		                      <label for="" class="nL_listName">
+		                          重复新密码</label>
+		                          <input type="password" id="repPwdInp" name="rePwd">
+		                          <span id="img-x-validate-1009" class="img-x-validate-error"></span>
+		                          <span id="oldpr" class="nL_validate_tips nL_validate_tips_l tip-x-validate-error">请再次输入密码</span>
+		                  </li>
+		              </ul>
+		              <button id="subbutton" type="button" class="revisePwd" id="revisePwd" onclick="revisePwd()">
+		                  确定修改</button>
+	              </form>
+	        </div>
+        </c:if>
     </div>
 </body>
 <script src="js/jquery-1.8.2.js"></script>

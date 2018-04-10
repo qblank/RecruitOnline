@@ -140,6 +140,15 @@ public class UserAction extends ActionSupport implements ModelDriven<User>,Servl
 	}
 	
 	/**
+	 * 选择对应的页面
+	 * @throws Exception
+	 */
+	public void selectPage() throws Exception{
+		String pagId = request.getParameter("");
+		
+	}
+	
+	/**
 	 * 测试过滤器
 	 * @return
 	 * @throws Exception

@@ -1,1 +1,5 @@
-/target
+/.gitignore
+/target/
+/.classpath
+/.project
+/.settings/
