@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	
+<struts>
+    <!-- 用户Action管理 -->
+	<package name="job" extends="struts-default" namespace="/" strict-method-invocation="false">
+		<action name="job_*" class="jobAction" method="{1}">
+			<result name="firmDetail">/WEB-INF/jsp/firmDetail.jsp</result>
+			<result name="jobdetail">/WEB-INF/jsp/jobdetail.jsp</result>
+		</action>
+		<action name="index" class="jobAction" method="indexJsp">
+			<!-- 访问主页面 -->
+			<result name="indexJsp">/WEB-INF/jsp/index.jsp</result>
+		</action>
+	</package>
+	
+</struts>

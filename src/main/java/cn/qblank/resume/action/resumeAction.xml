@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	
+<struts>
+    <!-- 用户Action管理 -->
+	<package name="resume" extends="struts-default" namespace="/" strict-method-invocation="false">
+		<action name="resume_*" class="resumeAction" method="{1}">
+			<!-- 访问静态页面 -->
+			<result name="resumeJsp">/WEB-INF/jsp/resume.jsp</result>
+		</action>
+	</package>
+	
+</struts>

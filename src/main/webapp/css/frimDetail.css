@@ -1,0 +1,172 @@
+/*公司详情页面*/
+div{
+    line-height: 19px;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.cWrap{
+    margin: 0 auto;
+    width: 1000px;
+    padding-top: 5px;
+}
+
+.cWrap .cCompanyTop{
+    margin: 0 auto;
+    width: 990px;
+    position: relative;
+}
+
+.cWrap .cCompanyTop .cCompanyTop_msg{
+    position: absolute;
+    left: 20px;
+    top: 110px;
+}
+
+.cWrap .cCompanyTop .cCompany_img{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.cCompanyTop .cCompanyTop_logo{
+    position: absolute;
+    width: 160px;
+    height: 150px;
+    z-index: 2;
+    background-color: #fff;
+    text-align: center;
+    line-height: 160px;
+    border: 2px solid #eee;
+    box-shadow: 2px 2px 10px 1px #ccc;
+}
+
+.cCompanyTop .cCompanyTop_logo img{
+    width: 136px;
+    margin: 0 auto;
+    background-position: center center;
+	padding-top: 40px;    
+}
+
+.cWrap .cCompanyTop .cCompanyTop_name{
+    width: 100px;
+    float: left;
+    position: absolute;
+    left: 200px;
+    top: 100px;
+    font: 700 23px "Microsoft Himalaya";
+}
+
+/*主体部分*/
+.cWrap .cCompanyMain{
+    margin-top: 300px;
+    border: 1px solid #ddd;
+    width: 1000px;
+    height: 776px;
+}
+.cWrap .cCompanyMain .cMainBgTop{
+    background: url("images/cMainBg.png") 0 0 repeat-y;
+}
+.cWrap .cCompanyMain .cMainbg .cCompanySubNav{
+    height: 37px;
+    border: 1px solid #fff;
+    background: #f2f5f5
+}
+.cWrap .cCompanyMain .cMainbg .cCompanySubNav .j_companySubNav span{
+    float: left;
+    width: 161px;
+    height: 40px;
+    line-height: 35px;
+    text-align: center;
+    font-weight: 700;
+}
+.cWrap .cCompanyMain .cMainbg .cCompanySubNav .j_companySubNav span a{
+    color: #000;
+    text-decoration: none;
+}
+
+.cWrap .cCompanyMain .cMainbg .cCompanySubNav .j_companySubNav .current{
+    background-color: #fff;
+}
+.cWrap .cCompanyMain .cCompanyGuild{
+    padding-left: 10px;
+    height: 70px;
+    border-bottom: 1px dotted #eee;
+}
+.cWrap .cCompanyMain .cCompanyGuild h1{
+    font:700 17px "Microsoft Himalaya";
+}
+.cWrap .cCompanyMain .cCompanyGuild span{
+    float: left;
+    margin-right: 60px;
+    font-size: 13px;
+    color: #cccccc;
+}
+.cWrap .cCompanyMain .cCompanyIntro{
+    width: 800px;
+    padding-left: 20px;
+}
+.cWrap .cCompanyMain .cCompanyIntro span{
+    font-size: 13px;
+    color: #aaa;
+}
+/*搜索*/
+.cWrap .cCompanyMain .cCompanySearchTopWrap{
+    margin-top: 20px;
+    height: 33px;
+    border: 1px solid #d8d8d8;
+    background: #f3f4f6;
+    border-radius: 1px;
+    padding: 0 6px 0 11px;
+}
+
+.cWrap .cCompanyMain .cCompanySearchTopWrap .cCompanySearchInfor {
+    margin-right: 25px;
+    height: 33px;
+    line-height: 33px;
+    font-size: 14px;
+    color: #555;
+}
+.cWrap .cCompanyMain .cCompanySearchTopWrap .cCompanySearchInfor b{
+    color: #59b759;
+}
+
+.cWrap .cCompanyMain .cCompanySearchTopWrap .cCompanySearchSelect {
+    height: 31px;
+    line-height: 31px;
+    vertical-align: middle;
+    color: #999;
+}
+.cWrap .cCompanyMain .cCompanySearchWrap {
+    margin-bottom: 20px;
+    padding: 0 7px 0 12px;
+    min-height: 340px;
+}
+
+.cWrap .cCompanyMain .cCompanySearchWrap ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.cWrap .cCompanyMain .cCompanySearchWrap .cCompanySearchListOld li{
+    float: left;
+    padding-right: 60px;
+    border-bottom: 1px dashed #dddde5;
+    width: 318px;
+    margin-top: 12px;
+    padding-bottom: 11px;
+}
+.cWrap .cCompanyMain .cCompanySearchWrap .cCompanySearchListOld li span{
+    font-size: 13px;
+    color: #999;
+}
+.cWrap .cCompanyMain .cCompanySearchWrap .cCompanySearchListOld li a {
+    width: 318px;
+    color: #3366B3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    word-wrap: normal;
+    text-decoration: none;
+}
