@@ -26,4 +26,14 @@ public class ResumeServiceImpl implements IResumeService{
 		return resumeDao.findResumeById(id);
 	}
 
+	@Override
+	public void save(Resume resume) {
+		resumeDao.save(resume);
+	}
+
+	@Override
+	public void update(Resume resume) {
+		resumeDao.update(resume);
+	}
+
 }

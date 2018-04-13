@@ -12,14 +12,17 @@ import org.hibernate.annotations.GenericGenerator;
 @Entity
 public class User implements Serializable{
 	@Id
-	@GeneratedValue(generator = "id")
-	@GenericGenerator(name = "id" , strategy = "native")
+	@GeneratedValue(generator="id")
+	@GenericGenerator(name="id",strategy="native")
 	private Integer id;
+	@Id
+	private Integer rid;	//简历编号
 	private String username;
 	private String pwd;
 	private String phone;
 	private Integer authority;
 	private Date registerTime;
+	
 	
 	
 	public User(String username, String pwd, String phone, Integer authority, Date registerTime) {
@@ -67,6 +70,13 @@ public class User implements Serializable{
 	}
 	public void setRegisterTime(Date registerTime) {
 		this.registerTime = registerTime;
+	}
+	
+	public Integer getRid() {
+		return rid;
+	}
+	public void setRid(Integer rid) {
+		this.rid = rid;
 	}
 	@Override
 	public String toString() {

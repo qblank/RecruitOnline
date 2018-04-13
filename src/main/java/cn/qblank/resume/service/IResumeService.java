@@ -16,4 +16,16 @@ public interface IResumeService {
 	 * @return
 	 */
 	public Resume findResumeById(Serializable id);
+	
+	/**
+	 * 添加简历信息
+	 * @param resume
+	 */
+	public void save(Resume resume);
+	
+	/**
+	 * 修改简历信息
+	 * @param resume
+	 */
+	public void update(Resume resume);
 }

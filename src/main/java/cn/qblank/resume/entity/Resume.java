@@ -15,6 +15,7 @@ public class Resume implements Serializable{
 	@GeneratedValue(generator = "rid")
 	@GenericGenerator(name = "rid" , strategy = "native")
 	private Integer rid;				//编号
+	private Integer uid;				//用户编号
 	/** 个人信息**/
 	private String rname;				//姓名
 	private String rgender;				//性别
@@ -22,9 +23,17 @@ public class Resume implements Serializable{
 	private String ridentityCard;		//身份证
 	private String residentialAddress;	//现居住地
 	private String roriginAddress;		//籍贯
+	private String rphone;				//联系电话
+	private String remail;				//电子邮箱
+	private String revaluation;			//自我评价
+	/**教育经历**/
+	private String rschoolname;
+	private String rprofessional;		//专业
+	private Date rstartDate;			//入学时间
 	private Date rgraduateDate;			//毕业时间
+	private Integer reducationType;		//学历类型
 	/**求职意向 **/
-	private String rnatureWork;			//工作性质
+	private Integer rnatureWork;			//工作性质
 	private String rdesiredCity;		//期望工作地点
 	private String rdesiredIndustry;	//期望从事行业
 	private String rdesiredFunction;	//期望从事职业
@@ -35,7 +44,7 @@ public class Resume implements Serializable{
 	private String rcompanyName;			//工作单位
 	private String rjobIndustry;			//行业类型
 	private String rjobFunction;			//职位类型
-	private Date rjobDateStart;			//入职时间
+	private Date rjobDateStart;				//入职时间
 	private Date rjobDateEnd;				//离职时间
 	private String rjobType;				//工作类型
 	private Double rworkExperienceSalary;	//职位月薪
@@ -106,10 +115,10 @@ public class Resume implements Serializable{
 	public void setRgraduateDate(Date rgraduateDate) {
 		this.rgraduateDate = rgraduateDate;
 	}
-	public String getRnatureWork() {
+	public Integer getRnatureWork() {
 		return rnatureWork;
 	}
-	public void setRnatureWork(String rnatureWork) {
+	public void setRnatureWork(Integer rnatureWork) {
 		this.rnatureWork = rnatureWork;
 	}
 	public String getRdesiredCity() {
@@ -256,28 +265,61 @@ public class Resume implements Serializable{
 	public void setSkills(String skills) {
 		this.skills = skills;
 	}
+	
+	public String getRevaluation() {
+		return revaluation;
+	}
+	public void setRevaluation(String revaluation) {
+		this.revaluation = revaluation;
+	}
 	public String getHobbies() {
 		return hobbies;
 	}
 	public void setHobbies(String hobbies) {
 		this.hobbies = hobbies;
 	}
-	@Override
-	public String toString() {
-		return "Resume [rid=" + rid + ", rname=" + rname + ", rgender=" + rgender + ", rbirthday=" + rbirthday
-				+ ", ridentityCard=" + ridentityCard + ", residentialAddress=" + residentialAddress
-				+ ", roriginAddress=" + roriginAddress + ", rgraduateDate=" + rgraduateDate + ", rnatureWork="
-				+ rnatureWork + ", rdesiredCity=" + rdesiredCity + ", rdesiredIndustry=" + rdesiredIndustry
-				+ ", rdesiredFunction=" + rdesiredFunction + ", rcurrentStatus=" + rcurrentStatus + ", rdesiredSalary="
-				+ rdesiredSalary + ", rdesiredWorktime=" + rdesiredWorktime + ", rcompanyName=" + rcompanyName
-				+ ", rjobIndustry=" + rjobIndustry + ", rjobFunction=" + rjobFunction + ", rjobDateStart="
-				+ rjobDateStart + ", rjobDateEnd=" + rjobDateEnd + ", rjobType=" + rjobType + ", rworkExperienceSalary="
-				+ rworkExperienceSalary + ", rjobTitle=" + rjobTitle + ", rjobExperienceDescribe="
-				+ rjobExperienceDescribe + ", rjobReterence=" + rjobReterence + ", rjobReterencePhone="
-				+ rjobReterencePhone + ", rprojectName=" + rprojectName + ", rprojectStartDate=" + rprojectStartDate
-				+ ", rprojectEndDate=" + rprojectEndDate + ", rprojectTitle=" + rprojectTitle
-				+ ", rprojectResponsibility=" + rprojectResponsibility + ", rprojectDescription=" + rprojectDescription
-				+ ", skills=" + skills + ", hobbies=" + hobbies + "]";
+	
+	public Integer getUid() {
+		return uid;
+	}
+	public void setUid(Integer uid) {
+		this.uid = uid;
+	}
+	public String getRphone() {
+		return rphone;
+	}
+	public void setRphone(String rphone) {
+		this.rphone = rphone;
+	}
+	public String getRemail() {
+		return remail;
+	}
+	public void setRemail(String remail) {
+		this.remail = remail;
+	}
+	public String getRschoolname() {
+		return rschoolname;
+	}
+	public void setRschoolname(String rschoolname) {
+		this.rschoolname = rschoolname;
+	}
+	public Date getRstartDate() {
+		return rstartDate;
+	}
+	public void setRstartDate(Date rstartDate) {
+		this.rstartDate = rstartDate;
+	}
+	public Integer getReducationType() {
+		return reducationType;
+	}
+	public void setReducationType(Integer reducationType) {
+		this.reducationType = reducationType;
+	}
+	public String getRprofessional() {
+		return rprofessional;
+	}
+	public void setRprofessional(String rprofessional) {
+		this.rprofessional = rprofessional;
 	}
 	
 	

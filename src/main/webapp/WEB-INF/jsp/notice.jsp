@@ -21,18 +21,56 @@
                 <h4>evan_qb</h4>
             </div>
             <ul class="leftNav" id="leftNav">
-                <li><a href="javascript:void(0)" class="fa fa-home currSel" aria-hidden="true">&nbsp;&nbsp;我的校园</a></li>
-                <li><a href="javascript:void(0)" class="fa fa-cogs" aria-hidden="true">&nbsp;&nbsp;账号设置</a></li>
-                <li><a href="javascript:void(0)" class="fa fa-american-sign-language-interpreting" aria-hidden="true">&nbsp;&nbsp;简历管理</a></li>
-                <li><a href="javascript:void(0)" class="fa fa-bar-chart" aria-hidden="true">&nbsp;&nbsp;投递记录</a></li>
-                <li ><a href="javascript:void(0)" class="fa fa-calendar"  aria-hidden="true">&nbsp;&nbsp;我的招聘会</a></li>
-                <li><a href="javascript:void(0)" class="fa fa-user-plus" aria-hidden="true">&nbsp;&nbsp;关注的公司</a></li>
+	                <li><a href="javascript:void(0)" target="targetPage" class="fa fa-home" aria-hidden="true">&nbsp;&nbsp;我的校园</a></li>
+	                <li><a href="javascript:void(0)" class="fa fa-cogs currSel" aria-hidden="true">&nbsp;&nbsp;账号设置</a></li>
+	                <li><a href="javascript:void(0)" class="fa fa-american-sign-language-interpreting" aria-hidden="true">&nbsp;&nbsp;简历管理</a></li>
+	                <li><a href="javascript:void(0)" class="fa fa-bar-chart" aria-hidden="true">&nbsp;&nbsp;投递记录</a></li>
+	                <li ><a href="javascript:void(0)" class="fa fa-calendar"  aria-hidden="true">&nbsp;&nbsp;我的招聘会</a></li>
+	                <li><a href="javascript:void(0)" class="fa fa-user-plus" aria-hidden="true">&nbsp;&nbsp;投递的公司</a></li>
             </ul>
         </div>
+        	<div class="rightWrapper" id="nav1">
+	            <div class="topWrapper">
+	                <div class="tabWrapper">
+	                    <ul id="tabNav">
+	                        <li class="current">我的校园</li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+        	
+        	<div class="rightWrapper" id="nav2" style="display:block">
+	            <div class="topWrapper">
+	                <div class="tabWrapper">
+	                    <ul id="tabNav">
+	                        <li class="current">修改密码</li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	        
+	        <div class="rightWrapper" id="nav3">
+	            <div class="topWrapper">
+	                <div class="tabWrapper">
+	                    <ul id="tabNav">
+	                        <li class="current">我的简历</li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	        
+	        <div class="rightWrapper" id="nav4">
+	            <div class="topWrapper">
+	                <div class="tabWrapper">
+	                    <ul id="tabNav">
+	                        <li class="current">投递记录</li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
         
-        <!--右边-->
-        <c:if test="${true }">
-	        <div class="rightWrapper">
+	        <!--右边-->
+	        <div class="rightWrapper" id="nav5">
 	            <div class="topWrapper">
 	                <div class="tabWrapper">
 	                    <ul id="tabNav">
@@ -42,11 +80,29 @@
 	                </div>
 	            </div>
 	        </div>
-        </c:if>
-        
-        <!-- 右下内容 -->
-        <c:if test="${true}">
-	        <div class="right_content">
+        	
+        	<div class="rightWrapper" id="nav6">
+	            <div class="topWrapper">
+	                <div class="tabWrapper">
+	                    <ul id="tabNav">
+	                        <li class="current">我的投递</li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	       
+	        
+	        <!-- 右下内容 -->
+	        <!-- 我的校园 -->
+	        <div class="right_content" id="content1">
+	        	<span class="nav_title">|我的校园</span>
+	        	<br><br>
+	        </div>
+	        
+	        <!-- 修改密码 -->
+	        <div class="right_content" id="content2" style="display:block">
+	        	<span class="nav_title">|账号设置</span>
+	        	<br><br>
 	              <form name="formC" id="formC">
 		              <ul class="nL_formbox">
 		                  <li>
@@ -75,9 +131,30 @@
 		                  确定修改</button>
 	              </form>
 	        </div>
-        </c:if>
+	        
+	        <!-- 简历管理 -->
+	        <div class="right_content" id="content3">
+	        	<span class="nav_title">|简历管理</span>
+	        	<br><br>
+	        </div>
+	        
+	        <!-- 投递记录 -->
+	        <div class="right_content" id="content4">
+	        	<span class="nav_title">|投递记录</span>
+	        	<br><br>
+	        </div>
+	        <!-- 我的招聘会 -->
+	        <div class="right_content" id="content5">
+	        	<span class="nav_title">|我的招聘会</span>
+	        	<br><br>
+	        </div>
+	        
+	        <!-- 投递的公司 -->
+	        <div class="right_content" id="content6">
+	        	<span class="nav_title">|投递的公司</span>
+	        	<br><br>
+	        </div>
     </div>
-    
     <%@include file="./booter.jsp" %>
 </body>
 <script src="js/jquery-1.8.2.js"></script>

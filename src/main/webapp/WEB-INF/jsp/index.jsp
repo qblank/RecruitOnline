@@ -11,6 +11,7 @@
     <script src="js/jquery-1.8.2.js"></script>
     <script src="js/carousel.js"></script>
     <script src="js/index.js"></script>
+    <script type="text/javascript" src="js/base.js"></script>
 </head>
 <body>
 	<%@include file="./header.jsp" %>

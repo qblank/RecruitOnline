@@ -72,7 +72,6 @@ $(function(){
 	
 });
 
-
 /**
  * ajax提交表单
  * oldpwd
@@ -98,3 +97,30 @@ function revisePwd(){
 		});
 	});
 }
+
+
+/**
+ * 左右模块联动
+ * @returns
+ */
+$(function(){
+	$("#leftNav li a").click(function(){
+		var txt = $(this).text().trim();
+		console.log(txt);
+		$.ajax({
+			type:"POST",
+			url: "Recruit/user_selectPage.action",
+			dataType: "json",
+			data:{
+				"txt":txt
+			},
+			success: function(data){
+				$("#content" + data.state).show().siblings(".right_content").hide();
+				$("#nav" + data.state).show().siblings(".rightWrapper").hide();
+			},
+			error: function(){
+				alert("失败");
+			}
+		});
+	});
+});

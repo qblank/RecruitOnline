@@ -14,8 +14,8 @@ import org.hibernate.annotations.GenericGenerator;
 @Entity
 public class Firm implements Serializable{
 	@Id
-	@GeneratedValue(generator = "fid")
-	@GenericGenerator(name = "fid" , strategy = "native")
+	/*@GeneratedValue(generator = "fid")
+	@GenericGenerator(name = "fid" , strategy = "native")*/
 	private Integer fid;			//编号
 	private String fname;			//公司名称
 	private String fdesc;			//公司描述

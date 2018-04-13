@@ -3,7 +3,8 @@
 .resumeWrap{
     width: 980px;
     margin: 20px auto;
-    border: 1px solid #aaa;
+    border-top: 1px solid #aaa;
+    float:left;
 }
 .resumeWrap .leftResume{
     width: 60%;
@@ -13,6 +14,8 @@
     width: 100%;
     height: 61px;
     float: left;
+    color: #4483bf;
+    font: 700 25px "Microsoft YaHei";
 }
 .resumeWrap .leftResume .resumeMain{
     width: 100%;
@@ -20,7 +23,7 @@
     float: left;
 }
 .resumeWrap .leftResume .resumeMain .tabWrap{
-    margin-top: 50px;
+    margin-top: 65px;
 }
 
 /*标题定位*/
@@ -121,10 +124,13 @@
 }
 /*右边部分*/
 .resumeWrap .rightResume{
-    width: 30%;
+    width: 20%;
     border: 1px solid #aaa;
     margin-left: 50px;
-    float: left;
+    /* float: left; */
+    position: fixed;
+    left:780px;
+    top:100px;
 }
 /*右边顶部*/
 .resumeWrap .rightResume .resumeTop{
@@ -159,4 +165,11 @@
     border-left: 2px solid #27B3E9;
 }
 
+
+/* 底部 */
+.booters{
+	width:100%;
+	margin-bottom: 0;
+	
+}
 

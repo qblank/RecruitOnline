@@ -11,7 +11,7 @@
         <br><br>
         <img src="images/logo.png" title="校园招聘" class="lg"/>
         <span class="desc">一个专门为大学生提供就业的网站</span><br><br><br>
-        <span class="content">
+        <span class="boot_content">
             <ul>
                 <li><a href="#">关于我们 |&nbsp;&nbsp;</a></li>
                 <li><a href="#">联系方式 |&nbsp;&nbsp;</a></li>

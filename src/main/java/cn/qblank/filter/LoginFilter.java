@@ -133,7 +133,8 @@ public class LoginFilter implements Filter {
 		final String[] LOGINED_URLS = {
 				"/user_withdraw.action",
 				"/user_test.action",
-				"/user_noticeJsp.action"
+				"/user_noticeJsp.action",
+				"/resume_resumeJsp.action"
 		};
 		Map<String,String> loginedUrlMap = new ConcurrentHashMap<>();
 		for (String loginedUrl : LOGINED_URLS) {

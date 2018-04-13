@@ -1,7 +1,9 @@
 package cn.qblank.resume.dao.impl;
 
 import java.io.Serializable;
+import java.util.List;
 
+import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -22,8 +24,24 @@ public class ResumeDaoImpl implements IResumeDao{
 	}
 
 	@Override
+	@SuppressWarnings("unchecked")
 	public Resume findResumeById(Serializable id) {
-		 return sessionFactory.getCurrentSession().get(Resume.class, id);
+		List<Resume> resumes = sessionFactory.getCurrentSession().createQuery("from Resume where uid = ?")
+				 .setParameter(0, id).list();
+		 if (resumes.size() > 0) {
+			return resumes.get(0);
+		}
+		return null;
+	}
+
+	@Override
+	public void save(Resume resume) {
+		sessionFactory.getCurrentSession().save(resume);
+	}
+
+	@Override
+	public void update(Resume resume) {
+		sessionFactory.getCurrentSession().update(resume);
 	}
 	
 	

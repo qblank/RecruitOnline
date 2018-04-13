@@ -26,5 +26,8 @@ $('#date_d').cxCalendar({
     format: 'YYYY-MM-DD HH:mm:ss'
 });
 
+/*入学时间*/
+$("#date_start").cxCalendar();
 /*毕业时间*/
 $('#date_gradual').cxCalendar();
+$("#rdesiredWorktime").cxCalendar();

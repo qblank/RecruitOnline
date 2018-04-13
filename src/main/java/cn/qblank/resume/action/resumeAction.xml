@@ -7,8 +7,9 @@
     <!-- 用户Action管理 -->
 	<package name="resume" extends="struts-default" namespace="/" strict-method-invocation="false">
 		<action name="resume_*" class="resumeAction" method="{1}">
-			<!-- 访问静态页面 -->
+			<!-- 访问简历页面 -->
 			<result name="resumeJsp">/WEB-INF/jsp/resume.jsp</result>
+			<result name="resumePre">/WEB-INF/jsp/resumePre.jsp</result>
 		</action>
 	</package>
 	

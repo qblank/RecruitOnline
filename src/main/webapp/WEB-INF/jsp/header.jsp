@@ -27,8 +27,8 @@
 	            <div class="compus" id="compus">
 	                <ul>
 	                    <li><a href="index.html">我的校园</a></li>
-	                    <li><a href="resume.html">简历管理</a></li>
-	                    <li><a href="notice.html">我的招聘会</a></li>
+	                    <li><a href="${pageContext.request.contextPath }/resume_resumeJsp.action">简历管理</a></li>
+	                    <li><a href="${pageContext.request.contextPath }/resume_resumeJsp.action">我的招聘会</a></li>
 	                </ul>
 	            </div>
 	            </li>

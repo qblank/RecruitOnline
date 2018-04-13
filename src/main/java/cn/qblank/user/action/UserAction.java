@@ -22,6 +22,7 @@ import com.opensymphony.xwork2.ModelDriven;
 
 import cn.qblank.user.entity.User;
 import cn.qblank.user.service.IUserService;
+import cn.qblank.util.Constant;
 
 @Controller
 @Scope("prototype")
@@ -144,8 +145,38 @@ public class UserAction extends ActionSupport implements ModelDriven<User>,Servl
 	 * @throws Exception
 	 */
 	public void selectPage() throws Exception{
-		String pagId = request.getParameter("");
-		
+		/*String pageId = request.getParameter("pageId");
+		int pid = 0;
+		if (pageId != null && !"".equals(pageId)) {
+			pid = Integer.parseInt(pageId);
+		}*/
+		String txt = request.getParameter("txt").trim();
+		logger.debug(txt);
+		PrintWriter pw = response.getWriter();
+		switch (txt) {
+			case "我的校园":
+				pw.write("{\"state\":" + Constant.STATE_MY_COMPUS +"}");
+				break;
+			case "账号设置":
+				pw.write("{\"state\":" +  Constant.STATE_ACCOUNT_MANAGE +"}");
+				break;
+			case "简历管理":
+				pw.write("{\"state\":" + Constant.STATE_RESUME_MANAGE +"}");
+				break;
+			case "投递记录":
+				pw.write("{\"state\":" + Constant.STATE_DELIVERY_RECORDS +"}");
+				break;
+			case "我的招聘会":
+				pw.write("{\"state\":" + Constant.STATE_MY_REFAIR +"}");
+				break;
+			case "投递的公司":
+				pw.write("{\"state\":" + Constant.STATE_MY_FIRM +"}");
+				break;
+			default:
+				pw.write("{\"state\":" + Constant.STATE_ACCOUNT_MANAGE +"}");
+				break;
+		}
+		pw.close();
 	}
 	
 	/**
