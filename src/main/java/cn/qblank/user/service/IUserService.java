@@ -1,5 +1,7 @@
 package cn.qblank.user.service;
 
+import java.io.Serializable;
+
 import cn.qblank.user.entity.User;
 
 public interface IUserService {
@@ -21,4 +23,11 @@ public interface IUserService {
 	 * @return
 	 */
 	boolean revisePwd(User user);
+	
+	/**
+	 * 通过编号查找用户信息
+	 * @param uid
+	 * @return
+	 */
+	User findUserById(Integer uid);
 }

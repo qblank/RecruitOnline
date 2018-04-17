@@ -83,6 +83,12 @@ public class LoginFilter implements Filter {
 		if (!isLogin(req)) {
 			resp.sendRedirect("user_loginJsp.action");
 			return;
+		}else {
+			/*//判断是否是管理员登陆
+			if(!isAdminLogin(req)){
+				resp.sendRedirect("admin_adminLoginJsp.action");
+				return;
+			}*/
 		}
 		chain.doFilter(req, resp);
 		
@@ -116,7 +122,9 @@ public class LoginFilter implements Filter {
 				"/user_loginJsp.action",
 				"/user_login.action",
 				"/user_register.action",
-				"/job_firmDetail.action"
+				"/job_firmDetail.action",
+				"/job_jobdetail.action",
+				"/admin_adminLoginJsp.action"
 		};
 		
 		Map<String,String> publicUrlMap = new ConcurrentHashMap<>();
@@ -134,7 +142,8 @@ public class LoginFilter implements Filter {
 				"/user_withdraw.action",
 				"/user_test.action",
 				"/user_noticeJsp.action",
-				"/resume_resumeJsp.action"
+				"/resume_resumeJsp.action",
+				
 		};
 		Map<String,String> loginedUrlMap = new ConcurrentHashMap<>();
 		for (String loginedUrl : LOGINED_URLS) {
@@ -165,6 +174,16 @@ public class LoginFilter implements Filter {
 	private boolean isLogin(HttpServletRequest request) {
 		Object sessionUser = WebUtils.getSessionAttribute(request, "sessionUser");
 		return (sessionUser != null && !sessionUser.equals(""));
+	}
+	
+	/**
+	 * 判断是否是管理员登陆
+	 * @param request
+	 * @return
+	 */
+	private boolean isAdminLogin(HttpServletRequest request) {
+		Object adminUser = WebUtils.getSessionAttribute(request, "adminUser");
+		return (adminUser !=null && !adminUser.equals(""));
 	}
 	
 	/**

@@ -1,5 +1,7 @@
 package cn.qblank.user.dao;
 
+import java.io.Serializable;
+
 import cn.qblank.user.entity.User;
 
 public interface IUserDao {
@@ -20,4 +22,14 @@ public interface IUserDao {
 	 * @return
 	 */
 	boolean revisePwd(User user);
+	
+	
+	/***管理员***/
+	
+	/**
+	 * 通过编号查找用户信息
+	 * @param uid
+	 * @return
+	 */
+	User findUserById(Integer uid);
 }

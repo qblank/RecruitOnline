@@ -32,5 +32,10 @@ public class UserServiceImpl implements IUserService{
 		return userDao.revisePwd(user);
 	}
 
+	@Override
+	public User findUserById(Integer uid) {
+		return userDao.findUserById(uid);
+	}
+
 	
 }

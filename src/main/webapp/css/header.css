@@ -88,6 +88,7 @@
     top: 50px;
     border: 1px solid #EDEDED;
     display: none;
+    z-index: 10;
 }
 .headerwrap .nav .myMessage li{
     text-align: center;

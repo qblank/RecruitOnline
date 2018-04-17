@@ -178,8 +178,63 @@
 			<version>4.2.5.RELEASE</version>
 		</dependency> -->
 		
+		<!-- json依赖  -->
+		<dependency>
+			<groupId>net.sf.json-lib</groupId>
+			<artifactId>json-lib</artifactId>
+			<version>2.4</version>
+			<classifier>jdk15</classifier>
+		</dependency>
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+			<version>1.7.0</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.5</version>
+		</dependency>
+		<dependency>
+			<groupId>net.sf.ezmorph</groupId>
+			<artifactId>ezmorph</artifactId>
+			<version>1.0.3</version>
+		</dependency>
 		
 		
+		<!-- itext相关jar包 -->
+		<!-- <dependency>  
+		    <groupId>com.lowagie</groupId>  
+		    <artifactId>itext</artifactId>  
+		    <version>2.1.7</version>  
+		</dependency>  
+		<dependency>
+		    <groupId>org.swinglabs</groupId>
+		    <artifactId>pdf-renderer</artifactId>
+		    <version>1.0.5</version>
+		</dependency>
+		<dependency>   
+		    <groupId>jtidy</groupId>  
+		    <artifactId>jtidy</artifactId>  
+		    <version>4aug2000r7-dev</version>  
+		    <type>jar</type>  
+		    <scope>compile</scope>  
+		</dependency>  
+		<dependency>  
+		    <groupId>net.sf.barcode4j</groupId>  
+		    <artifactId>barcode4j-light</artifactId>  
+		    <version>2.0</version>  
+		</dependency>   
+		<dependency>  
+		    <groupId>avalon-framework</groupId>  
+		    <artifactId>avalon-framework-impl</artifactId>  
+		    <version>4.2.0</version>
+		</dependency>  -->
     </dependencies>
   <build>
     <finalName>Recruit</finalName>

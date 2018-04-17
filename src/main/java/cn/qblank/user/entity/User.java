@@ -1,7 +1,7 @@
 package cn.qblank.user.entity;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,15 +15,16 @@ public class User implements Serializable{
 	@GeneratedValue(generator="id")
 	@GenericGenerator(name="id",strategy="native")
 	private Integer id;
-	@Id
 	private Integer rid;	//简历编号
+	private String gender;
+	private Integer age;
 	private String username;
 	private String pwd;
 	private String phone;
 	private Integer authority;
 	private Date registerTime;
-	
-	
+	private String email;
+	private String qq;
 	
 	public User(String username, String pwd, String phone, Integer authority, Date registerTime) {
 		this.username = username;
@@ -31,6 +32,32 @@ public class User implements Serializable{
 		this.phone = phone;
 		this.authority = authority;
 		this.registerTime = registerTime;
+	}
+	
+	public String getEmail() {
+		return email;
+	}
+	public String getQq() {
+		return qq;
+	}
+	public void setQq(String qq) {
+		this.qq = qq;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+	public Integer getAge() {
+		return age;
+	}
+
+	public void setAge(Integer age) {
+		this.age = age;
 	}
 	public User() {
 		

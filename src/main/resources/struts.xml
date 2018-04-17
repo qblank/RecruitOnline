@@ -15,6 +15,11 @@
     
 	<!-- 用户模块 -->
 	<include file="cn/qblank/user/action/userAction.xml"></include>
+	<!-- 简历模块 -->
 	<include file="cn/qblank/resume/action/resumeAction.xml"></include>
+	<!-- 工作模块 -->
 	<include file="cn/qblank/job/action/jobAction.xml"></include>
+	<!-- 管理员模块 -->
+	<include file="cn/qblank/admin/action/adminAction.xml"></include>
+	
 </struts>

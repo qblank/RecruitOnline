@@ -1,5 +1,6 @@
 package cn.qblank.user.dao.impl;
 
+import java.io.Serializable;
 import java.util.List;
 
 import org.hibernate.Query;
@@ -53,6 +54,11 @@ public class UserDaoimpl  implements IUserDao{
 	public boolean revisePwd(User user) {
 		sessionFactory.getCurrentSession().update(user);
 		return true;
+	}
+
+	@Override
+	public User findUserById(Integer id) {
+		return sessionFactory.getCurrentSession().get(User.class, id);
 	}
 	
 }

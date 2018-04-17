@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	
+<struts>
+    <!-- 管理员Action管理 -->
+	<package name="admin" extends="struts-default" namespace="/" strict-method-invocation="false">
+		<action name="admin_*" class="adminAction" method="{1}">
+			<!-- 管理员登陆页面 -->			
+			<result name="adminLoginJsp">/WEB-INF/admin/resource/login.html</result>
+			<!-- 进入主页 -->
+			<result name="adminIndex">/WEB-INF/admin/resource/index.html</result>
+			<!-- 系统首页 -->		
+			<result name="home">/WEB-INF/admin/resource/home.jsp</result>		
+			<!-- 个人信息 -->
+			<result name="adminInfo">/WEB-INF/admin/resource/admin_info.jsp</result>
+			<!-- 用户信息管理 -->
+			<result name="userList">/WEB-INF/admin/resource/user_list.jsp</result>
+			<!-- 系统简历信息管理 -->
+			<result name="systemResumeInfo">/WEB-INF/admin/resource/systemResumeInfo.jsp</result>
+			<!-- 简历文档信息管理 -->
+			<result name="resumeDocInfo">/WEB-INF/admin/resource/resumeDocInfo.jsp</result>
+			<!-- 职位信息管理 -->
+			<result name="positionInfo">/WEB-INF/admin/resource/positionInfo.jsp</result>
+			<!-- 应聘信息管理 -->
+			<result name="empManage">/WEB-INF/admin/resource/empManage.jsp</result>
+			<!-- 招聘会信息管理 -->
+			<result name="jobFairManage">/WEB-INF/admin/resource/jobFairManage.jsp</result>
+			<!-- 系统设置 -->
+			<result name="systemSettings">/WEB-INF/admin/resource/systemSettings.jsp</result>
+			<!-- 留言管理 -->
+			<result name="messageManage">/WEB-INF/admin/resource/messageManage.jsp</result>
+			
+		</action>
+	</package>
+	
+</struts>

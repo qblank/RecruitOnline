@@ -4,26 +4,6 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-    <title>底部</title>
-    <link rel="stylesheet" href="../css/booter.css">
-</head>
-<body>
-    <div class="booter">
-        <br><br>
-        <img src="../images/logo.png" title="校园招聘" class="lg"/>
-        <span class="desc">一个专门为大学生提供的网站</span><br><br><br>
-        <span class="content">
-            <ul>
-                <li><a href="#">关于我们 |&nbsp;&nbsp;</a></li>
-                <li><a href="#">联系方式 |&nbsp;&nbsp;</a></li>
-                <li><a href="#">意见反馈 |&nbsp;&nbsp;</a></li>
-                <li><a href="#">法律声明 |&nbsp;&nbsp;</a></li>
-                <li><a href="#">隐私策略</a></li>
-            </ul>
-        </span>
-    </div>
-</body>
-</html>
     <title>招聘会</title>
     <link rel="stylesheet" href="../css/jobFair.css">
     <link rel="stylesheet" href="../css/base.css">

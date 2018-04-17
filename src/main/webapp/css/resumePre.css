@@ -14,18 +14,22 @@
     margin-left: 30px;
     margin-top: 30px;
 }
-.previewMain .preview_top_right{
-    margin-right: 30px;
-    margin-top: 30px;
+.preview_top_right{
+   /*  margin-right: 30px;
+    margin-top: 30px; */
+    /* margin:20px auto; */
+    position: absolute;
+    right:220px;
+    top:127px;
 }
-.previewMain .preview_top_right .operate{
+.preview_top_right .operate{
     width: 252px;
     height: 39px;
     float: right;
     font: 18px/39px "Microsoft Yahei";
     text-align: center;
 }
-.previewMain .preview_top_right .operate a{
+.preview_top_right .operate a{
     border: 1px solid #27B3E9;
     width: 120px;
     height: 39px;
@@ -33,7 +37,7 @@
     color: #595757;
     cursor: pointer;
 }
-.previewMain .preview_top_right .operate a i{
+.preview_top_right .operate a i{
     color: #27B3E9;
 }
 /*基本个人信息*/
