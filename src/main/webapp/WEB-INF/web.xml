@@ -30,10 +30,10 @@
   </listener>
   
   <!-- 配置404 -->
-  <error-page>
+  <!-- <error-page>
   	<error-code>404</error-code>
   	<location>/404.html</location>
-  </error-page>
+  </error-page> -->
   
   <!-- 配置500 -->
  <!--  <error-page>
@@ -42,7 +42,7 @@
   </error-page> -->
   
   <!-- 设置session超时时间 -->
-  <session-config>
+  <!-- <session-config>
   	<session-timeout>360000</session-timeout>
-  </session-config>
+  </session-config> -->
 </web-app>

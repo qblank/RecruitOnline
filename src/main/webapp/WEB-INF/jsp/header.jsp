@@ -28,7 +28,7 @@
 	                <ul>
 	                    <li><a href="index.html">我的校园</a></li>
 	                    <li><a href="${pageContext.request.contextPath }/resume_resumeJsp.action">简历管理</a></li>
-	                    <li><a href="${pageContext.request.contextPath }/resume_resumeJsp.action">我的招聘会</a></li>
+	                    <li><a href="${pageContext.request.contextPath }/job_jobFair.action">我的招聘会</a></li>
 	                </ul>
 	            </div>
 	            </li>
@@ -62,6 +62,7 @@
 	                <a href="${pageContext.request.contextPath }/user_registerJsp.action">注册</a>
 	            </li>
 	         </c:if>
+	         <li><a href="${pageContext.request.contextPath }/admin_adminLoginJsp.action">管理员入口</a></li>
         </ul>
     </div>
 </div>

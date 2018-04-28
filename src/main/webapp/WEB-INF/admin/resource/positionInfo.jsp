@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -31,7 +32,7 @@
  <div class="search_style">
       <div class="title_names">搜索查询</div>
       <ul class="search_content clearfix">
-       <li><label class="l_f">留言</label><input name="" type="text" class="text_add" placeholder="输入留言信息" style=" width:250px"></li>
+       <li><label class="l_f">搜索姓名</label><input name="" type="text" class="text_add" placeholder="输入姓名" style=" width:250px"></li>
        <li><label class="l_f">时间</label><input class="inline laydate-icon" id="start" style=" margin-left:10px;"></li>
        <li style="width:90px;"><button type="button" class="btn_search"><i class="icon-search"></i>查询</button></li>
       </ul>
@@ -39,8 +40,8 @@
     <div class="border clearfix">
        <span class="l_f">
         <a href="javascript:ovid()" class="btn btn-danger"><i class="fa fa-trash"></i>&nbsp;批量删除</a>
-        <a href="javascript:ovid()" class="btn btn-sm btn-primary"><i class="fa fa-check"></i>&nbsp;已浏览</a>
-        <a href="javascript:ovid()" class="btn btn-yellow"><i class="fa fa-times"></i>&nbsp;未浏览</a>
+        <a href="javascript:void(0)" class="btn btn-sm btn-primary"><i class="fa fa-check"></i>&nbsp;可见</a>
+        <a href="javascript:void(0)" class="btn btn-yellow"><i class="fa fa-times"></i>&nbsp;不可见</a>
        </span>
        <span class="r_f">共：<b>2334</b>条</span>
      </div>
@@ -51,35 +52,47 @@
 		 <tr>
           <th width="25"><label><input type="checkbox" class="ace"><span class="lbl"></span></label></th>
           <th width="80">ID</th>
-          <th width="150px">用户名</th>
-          <th width="">留言内容</th>
-          <th width="200px">时间</th>
+          <th width="150px">发布人</th>
+          <th width="">招聘职位</th>
+          <th width="200px">发布时间</th>
           <th width="70">状态</th>                
           <th width="250">操作</th>
           </tr>
       </thead>
 	<tbody>
-		<tr>
-     <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-          <td>1</td>
-          <td><u style="cursor:pointer"  class="text-primary" onclick="member_show('张小泉','member-show.html','1031','500','400')">张小泉</u></td>
-          <td class="text-l">
-          <a href="javascript:;" onclick="Guestbook_iew('12')">“第二届中国无锡水蜜桃开摘节”同时开幕，为期三个月的蜜桃季全面启动。值此京东“618品质狂欢节”之际，中国特产无锡馆限量上线618份8只装精品水蜜桃，61.8元全国包邮限时抢购。为了保证水蜜桃从枝头到达您的手中依旧鲜甜如初，京东采用递送升级服务，从下单到包装全程冷链运输。</a>
-          <td>2016-6-11 11:11:42</td>
-          <td class="td-status"><span class="label label-success radius">已浏览</span></td>
-          <td class="td-manage">
-           <a onClick="member_stop(this,'10001')"  href="javascript:;" title="已浏览"  class="btn btn-xs btn-success"><i class="fa fa-check  bigger-120"></i></a>   
-        <a  onclick="member_edit('回复','member-add.html','4','','510')" title="回复"  href="javascript:;"  class="btn btn-xs btn-info" ><i class="fa fa-edit bigger-120"></i></a>      
-        <a  href="javascript:;"  onclick="member_del(this,'1')" title="删除" class="btn btn-xs btn-warning" ><i class="fa fa-trash  bigger-120"></i></a>
-          </td>
-        </tr>
+		<c:forEach var="position" items="${positions }" varStatus="pos">
+			<tr>
+	     	  <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
+	          <td>${pos.count}</td>
+	          <td><u style="cursor:pointer"  class="text-primary" onclick="member_show('张小泉','member-show.html','1031','500','400')">${position.pcontactPeople}</u></td>
+	          <td class="text-l">
+	          <a href="javascript:;" onclick="Guestbook_iew('${position.pid}')">${position.pname }</a>
+	          	<!--留言详细-->
+				<div id="Guestbook" style="display:none">
+				 <div class="content_style">
+				 	<!-- 描述 -->
+				    <div class="form-group"><label class="col-sm-2 control-label no-padding-right" for="form-field-1"> 描述: </label>
+				       <textarea class="col-sm-9" rows="8">${position.pdesc }</textarea>
+					</div>
+				 </div>
+				</div>
+	          
+	          <td><fmt:formatDate value="${position.pubdate }" pattern="yyyy-MM-dd"/></td>
+	          <td class="td-status"><span class="label label-success radius">可见</span></td>
+	          <td class="td-manage">
+	            <a onClick="member_stop(this,'10001')"  href="javascript:;" title="可见"  class="btn btn-xs btn-success"><i class="fa fa-check  bigger-120"></i></a>   
+		        <a  onclick="member_edit('回复','member-add.html','4','','510')" title="回复"  href="javascript:;"  class="btn btn-xs btn-info" ><i class="fa fa-edit bigger-120"></i></a>      
+		        <a  href="javascript:;"  onclick="member_del(this,'1')" title="删除" class="btn btn-xs btn-warning" ><i class="fa fa-trash  bigger-120"></i></a>
+	          </td>
+	        </tr>
+        </c:forEach>
         </tbody>
       </table>
     </div>
  </div>
 </div>
 <!--留言详细-->
-<div id="Guestbook" style="display:none">
+<!-- <div id="Guestbook" style="display:none">
  <div class="content_style">
   <div class="form-group"><label class="col-sm-2 control-label no-padding-right" for="form-field-1">留言用户 </label>
        <div class="col-sm-9">胡海天堂</div>
@@ -97,7 +110,7 @@
        </div>
 	</div>
  </div>
-</div>
+</div> -->
 </body>
 </html>
 <script type="text/javascript">
@@ -127,16 +140,16 @@ $('#checkbox').on('click',function(){
 function Guestbook_iew(id){
 	var index = layer.open({
         type: 1,
-        title: '留言信息',
+        title: '描述信息',
 		maxmin: true, 
 		shadeClose:false,
         area : ['600px' , ''],
         content:$('#Guestbook'),
 		btn:['确定','取消'],
 		yes: function(index, layero){		 
-		  if($('input[name="checkbox"]').prop("checked")){			 
+		  /* if($('input[name="checkbox"]').prop("checked")){			 
 			 if($('.form-control').val()==""){
-				layer.alert('回复内容不能为空！',{
+				layer.alert('内容不能为空！',{
                title: '提示框',				
 			  icon:0,		
 			  }) 
@@ -156,7 +169,17 @@ function Guestbook_iew(id){
 			icon:0,		
 			  }); 
 			  layer.close(index);      		  
-		  }
+		  } */
+		  layer.alert('是否确定修改?',{
+			  title:'提示框',
+			  icon:0,
+			  btn:['确定','取消'],
+			  yes:function(index){
+				  //进行修改
+				  
+				  layer.closeAll();
+			  }
+		  });
 	   }
 	})	
 };
@@ -211,4 +234,28 @@ jQuery(function($) {
 					return 'left';
 				}
 			})
+</script>
+
+<script type="text/javascript">
+	/*添加为不合适*/
+	function member_stop(obj,id){
+		layer.confirm('确认要设置为不可见吗？',function(index){
+			$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" class="btn btn-xs " onClick="member_start(this,id)" href="javascript:;" title="发布"><i class="fa fa-check  bigger-120"></i></a>');
+			$(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt radius">不可见</span>');
+			$(obj).remove();
+			layer.msg('已标记为不可见!',{icon: 5,time:1000});
+		});
+	}
+</script>
+
+<script type="text/javascript">
+/*添加为合适*/
+function member_start(obj,id){
+	layer.confirm('确认要发布吗？',function(index){
+		$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" class="btn btn-xs btn-success" onClick="member_stop(this,id)" href="javascript:;" title="停用"><i class="fa fa-check  bigger-120"></i></a>');
+		$(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">可见</span>');
+		$(obj).remove();
+		layer.msg('已发布!',{icon: 6,time:1000});
+	});
+}
 </script>

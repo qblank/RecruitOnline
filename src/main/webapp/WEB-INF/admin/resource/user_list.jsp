@@ -60,7 +60,7 @@
     <div class="search_style">
       <div class="title_names">搜索查询</div>
       <ul class="search_content clearfix">
-       <li><label class="l_f">会员名称</label><input name="" type="text"  class="text_add" placeholder="输入会员名称、电话、邮箱"  style=" width:400px"/></li>
+       <li><label class="l_f">用户名称</label><input name="" type="text"  class="text_add" placeholder="输入会员名称、电话、邮箱"  style=" width:400px"/></li>
        <li><label class="l_f">添加时间</label><input class="inline laydate-icon" id="start" style=" margin-left:10px;"></li>
        <li style="width:90px;"><button type="button" class="btn_search"><i class="icon-search"></i>查询</button></li>
       </ul>
@@ -96,7 +96,7 @@
 			<tr>
 	          <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
 	          <td>${uState.count}</td>
-	          <td><u style="cursor:pointer" class="text-primary" onclick="member_show('张三','member-show.html','10001','500','400')">${user.username}</u></td>
+	          <td><u style="cursor:pointer" class="text-primary" onclick="member_show('${user.username}','http://localhost:8080/Recruit/admin_showUserDetail.action',${user.id },'500','400')">${user.username}</u></td>
 	          <td>${user.gender }</td>
 	          <td>${user.phone }</td>
 	          <td>${user.email }</td>
@@ -257,7 +257,7 @@ jQuery(function($) {
 });
 /*用户-查看*/
 function member_show(title,url,id,w,h){
-	layer_show(title,url+'#?='+id,w,h);
+	layer_show(title,url+'?uid='+id,w,h);
 }
 /*用户-停用*/
 function member_stop(obj,id){

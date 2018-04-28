@@ -1,6 +1,7 @@
 package cn.qblank.resume.service.impl;
 
 import java.io.Serializable;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,8 +23,8 @@ public class ResumeServiceImpl implements IResumeService{
 	}
 
 	@Override
-	public Resume findResumeById(Serializable id) {
-		return resumeDao.findResumeById(id);
+	public Resume findResumeByUid(Serializable id) {
+		return resumeDao.findResumeByUid(id);
 	}
 
 	@Override
@@ -34,6 +35,11 @@ public class ResumeServiceImpl implements IResumeService{
 	@Override
 	public void update(Resume resume) {
 		resumeDao.update(resume);
+	}
+
+	@Override
+	public List<Resume> findAllResume(String status) {
+		return resumeDao.findAllResume(status);
 	}
 
 }

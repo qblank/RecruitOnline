@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Transactional;
 
+import cn.qblank.resume.entity.Resume;
 import cn.qblank.user.dao.IUserDao;
 import cn.qblank.user.entity.User;
 
@@ -59,6 +60,20 @@ public class UserDaoimpl  implements IUserDao{
 	@Override
 	public User findUserById(Integer id) {
 		return sessionFactory.getCurrentSession().get(User.class, id);
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public Resume findResumeByUser(User user) {
+		/*return sessionFactory.getCurrentSession().get(Resume.class, user.getRid());*/
+		String hql = "from Resume where rid = ?";
+		Query q = sessionFactory.getCurrentSession().createQuery(hql).setParameter(0, user.getRid());
+		List<Resume> list = q.list();
+		if (list != null) {
+			Resume resume = list.get(0);
+			return resume;
+		}
+		return null;
 	}
 	
 }

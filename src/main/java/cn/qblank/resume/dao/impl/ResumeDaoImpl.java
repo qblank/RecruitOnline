@@ -25,7 +25,7 @@ public class ResumeDaoImpl implements IResumeDao{
 
 	@Override
 	@SuppressWarnings("unchecked")
-	public Resume findResumeById(Serializable id) {
+	public Resume findResumeByUid(Serializable id) {
 		List<Resume> resumes = sessionFactory.getCurrentSession().createQuery("from Resume where uid = ?")
 				 .setParameter(0, id).list();
 		 if (resumes.size() > 0) {
@@ -42,6 +42,16 @@ public class ResumeDaoImpl implements IResumeDao{
 	@Override
 	public void update(Resume resume) {
 		sessionFactory.getCurrentSession().update(resume);
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Resume> findAllResume(String status) {
+		String hql = "from Resume where status = ?";
+		Query q = sessionFactory.getCurrentSession().createQuery(hql)
+			.setParameter(0, status);
+		List<Resume> resumes = q.list();
+		return resumes;
 	}
 	
 	

@@ -2,6 +2,7 @@ package cn.qblank.admin.service;
 
 import java.util.List;
 
+import cn.qblank.admin.entity.LoginRecord;
 import cn.qblank.user.entity.User;
 
 public interface IAdminService {
@@ -27,4 +28,15 @@ public interface IAdminService {
 	 * @param user
 	 */
 	public void addUser(User user);
+	/**
+	 * 插入登陆记录
+	 * @param user
+	 */
+	public void insertLoginRecord(LoginRecord record);
+	/**
+	 * 查询所有登陆记录
+	 * @param user
+	 * @return
+	 */
+	public List<LoginRecord> findAllRecordByUser(User user);
 }

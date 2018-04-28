@@ -1,10 +1,16 @@
 /*招聘会*/
+
 .jobFairwrap{
     width: 780px;
     height: 580px;
     border: 1px solid #aaa;
-    margin: 30px auto;
+    margin: 50px auto;
 }
+
+.jobFairwrap .search{
+	margin-top: -15px;	
+}
+
 .jobFairwrap .search_tab{
     width: 719px;
     height: 114px;
@@ -54,9 +60,9 @@
 .jobFairwrap .jobFairList ul li{
     float: left;
     width: 300px;
-    height: 127px;
-    padding-left: 50px;
+    padding-left: 73px;
     padding-top: 30px;
+    margin-bottom: 20px;
 }
 .jobFairwrap .jobFairList .clearFix{
     width: 344px;
@@ -74,3 +80,9 @@
 .jobFairwrap .jobFairList .clearFix .btn_depart:hover{
     background-image: linear-gradient(to bottom, #48e028, #25b915);
 }
+
+/* 分页 */
+/* .page{
+	float:left;
+	height:50px;
+} */

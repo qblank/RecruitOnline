@@ -1,5 +1,7 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 	<head>
 		<meta charset="utf-8" />
 		<title>网站后台管理系统  </title>
@@ -188,6 +190,10 @@ $('.change_Password').on('click', function(){
 	 icon:2,
     }, 
 	function(){
+    	$.ajax({
+    		method:"POST",
+    		url:"admin_exitSystem.action"
+    	});
 	  location.href="admin_adminLoginJsp.action";
         
     });
@@ -212,7 +218,7 @@ $('.change_Password').on('click', function(){
                <ul class="nav ace-nav">	
                 <li class="light-blue">
 							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-								<span  class="time"><em id="time"></em></span><span class="user-info"><small>欢迎光临,</small>ADMIN	</span>
+								<span  class="time"><em id="time"></em></span><span class="user-info"><small>欢迎光临,</small>${adminUser.username }</span>
 								<i class="icon-caret-down"></i>
 							</a>
 							<ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">

@@ -2,6 +2,7 @@ package cn.qblank.user.service;
 
 import java.io.Serializable;
 
+import cn.qblank.resume.entity.Resume;
 import cn.qblank.user.entity.User;
 
 public interface IUserService {
@@ -30,4 +31,11 @@ public interface IUserService {
 	 * @return
 	 */
 	User findUserById(Integer uid);
+	
+	/**
+	 * 通过用户查简历
+	 * @param user
+	 * @return
+	 */
+	Resume findResumeByUser(User user);
 }

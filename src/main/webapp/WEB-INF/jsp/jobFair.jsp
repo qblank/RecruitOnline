@@ -5,12 +5,20 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <title>招聘会</title>
-    <link rel="stylesheet" href="../css/jobFair.css">
-    <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/goodinserter/jquery.cxcalendar.css">
-    <!--<script src="../js/jquery-1.8.2.js"></script>-->
+    <link rel="stylesheet" href="css/jobFair.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/goodinserter/jquery.cxcalendar.css">
+    <!--<script src="js/jquery-1.8.2.js"></script>-->
+    
+    <!-- 引入bootstrapcss -->
+   <!--  <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css"> -->
+    <script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+    <!-- <script type="text/javascript" src="css/bootstrap/js/bootstrap.min.js"></script> -->
+    
 </head>
 <body>
+	<%@include file="./header.jsp" %>
+
     <div class="jobFairwrap">
         <form action="">
             <div class="search_tab">
@@ -21,13 +29,14 @@
                         <input type="button" value="选择日期" class="datePicker" />
                     </label>
                     <span class="line">-</span>-->
-                    <fieldset>
-                        <legend>选择日期和时间</legend>
-                        <label for="date_e">选择日期：</label>
-                        <input id="date_e" name="mydate" type="text" readonly>
-                        <input type="submit" value="搜索" class="search_sub">
-                    </fieldset>
-
+                    <div class="search">
+	                    <fieldset>
+	                        <legend>选择日期和时间</legend>
+	                        <label for="date_e">选择日期：</label>
+	                        <input id="date_e" name="mydate" type="text" readonly>
+	                        <input type="submit" value="搜索" class="search_sub">
+	                    </fieldset>
+                    </div>
                 </div>
             </div>
         </form>
@@ -111,12 +120,28 @@
                 </li>
             </ul>
         </div>
+        
+        <!-- 分页 -->
+        <!-- <div class="page">
+        	<ul class="pagination">
+			    <li><a href="#">&laquo;</a></li>
+			    <li><a href="#">1</a></li>
+			    <li><a href="#">2</a></li>
+			    <li><a href="#">3</a></li>
+			    <li><a href="#">4</a></li>
+			    <li><a href="#">5</a></li>
+			    <li><a href="#">&raquo;</a></li>
+			</ul>
+        </div> -->
     </div>
+    
+    
+    <%-- <%@include file="./booter.jsp" %> --%>
 </body>
 <!--<script src="http://cdn.staticfile.org/jquery/2.1.1-rc2/jquery.min.js"></script>-->
-<script src="../js/jquery-1.8.2.js"></script>
-<script src="../js/goodinserter/jquery.cxcalendar.js"></script>
-<script src="../js/goodinserter/jquery.cxcalendar.languages.js"></script>
+<script src="js/jquery-1.8.2.js"></script>
+<script src="js/goodinserter/jquery.cxcalendar.js"></script>
+<script src="js/goodinserter/jquery.cxcalendar.languages.js"></script>
 <script>
     // 选择日期和时间
     $('#date_d').cxCalendar({

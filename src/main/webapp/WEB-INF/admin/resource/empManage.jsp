@@ -38,11 +38,9 @@
     </div>
   <div class="border clearfix">
        <span class="l_f">
-        <a href="javascript:ovid()" class="btn btn-danger"><i class="fa fa-trash"></i>&nbsp;批量删除</a>
-        <a href="javascript:ovid()" class="btn btn-sm btn-primary"><i class="fa fa-check"></i>&nbsp;已浏览</a>
-        <a href="javascript:ovid()" class="btn btn-yellow"><i class="fa fa-times"></i>&nbsp;未浏览</a>
-        <a href="javascript:ovid()" class="btn btn-success"><i class="fa fa-feed"></i>&nbsp;建议</a>
-        <a href="javascript:ovid()" class="btn btn-success"><i class="fa fa-feed"></i>&nbsp;投诉</a>
+        <a href="javascript:void(0)" class="btn btn-danger"><i class="fa fa-trash"></i>&nbsp;批量删除</a>
+        <a href="javascript:void(0)" class="btn btn-sm btn-primary"><i class="fa fa-check"></i>&nbsp;合适</a>
+        <a href="javascript:void(0)" class="btn btn-yellow"><i class="fa fa-times"></i>&nbsp;不合适</a>
        </span>
        <span class="r_f">共：<b>2334</b>条</span>
      </div>
@@ -64,20 +62,36 @@
       </thead>
 	<tbody>
 		<tr>
-     <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-          <td>1</td>
-          <td>张小泉</td>
-          <td>13333333333</td>
-          <td>56564653@qq.com</td>
-          <td class="text-l">
-          <a href="javascript:;" onclick="Guestbook_iew('12')">“第二届中国无锡水蜜桃开摘节”同时开幕，为期三个月的蜜桃季全面启动。值此京东“618品质狂欢节”之际，中国特产无锡馆限量上线618份8只装精品水蜜桃，61.8元全国包邮限时抢购。为了保证水蜜桃从枝头到达您的手中依旧鲜甜如初，京东采用递送升级服务，从下单到包装全程冷链运输。</a>
-          <td>2016-6-11 11:11:42</td>
-          <td class="td-status"><span class="label label-success radius">已浏览</span></td>
-          <td>投诉</td>
-          <td class="td-manage">    
-        <a  href="javascript:;"  onclick="member_del(this,'1')" title="删除" class="btn btn-xs btn-warning" ><i class="fa fa-trash  bigger-120"></i></a>
-        <a  href="javascript:;"  onclick="member_del(this,'1')" title="回复" class="btn btn-xs btn-pink" ><i class="fa fa-envelope-o  bigger-120"></i></a>
-          </td>
+	      <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
+	          <td>1</td>
+	          <td>张小泉</td>
+	          <td>13333333333</td>
+	          <td>56564653@qq.com</td>
+	          <td class="text-l">
+	          <a href="javascript:;" onclick="Guestbook_iew('12')">“第二届中国无锡水蜜桃开摘节”同时开幕，为期三个月的蜜桃季全面启动。值此京东“618品质狂欢节”之际，中国特产无锡馆限量上线618份8只装精品水蜜桃，61.8元全国包邮限时抢购。为了保证水蜜桃从枝头到达您的手中依旧鲜甜如初，京东采用递送升级服务，从下单到包装全程冷链运输。</a>
+	          <td>2016-6-11 11:11:42</td>
+	          <td class="td-status"><span class="label label-success radius">合适</span></td>
+	          <td>投诉</td>
+	          <td class="td-manage">    
+	        <a  href="javascript:;"  onclick="member_del(this,'1')" title="删除" class="btn btn-xs btn-warning" ><i class="fa fa-trash  bigger-120"></i></a>
+	        <a  href="javascript:;"  onclick="member_del(this,'1')" title="回复" class="btn btn-xs btn-pink" ><i class="fa fa-envelope-o  bigger-120"></i></a>
+	      </td>
+        </tr>
+        <tr>
+	      <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
+	          <td>2</td>
+	          <td>张小泉</td>
+	          <td>13333333333</td>
+	          <td>56564653@qq.com</td>
+	          <td class="text-l">
+	          <a href="javascript:;" onclick="Guestbook_iew('12')">“第二届中国无锡水蜜桃开摘节”同时开幕，为期三个月的蜜桃季全面启动。值此京东“618品质狂欢节”之际，中国特产无锡馆限量上线618份8只装精品水蜜桃，61.8元全国包邮限时抢购。为了保证水蜜桃从枝头到达您的手中依旧鲜甜如初，京东采用递送升级服务，从下单到包装全程冷链运输。</a>
+	          <td>2016-6-11 11:11:42</td>
+	          <td class="td-status"><span class="label label-success radius">不合适</span></td>
+	          <td>投诉</td>
+	          <td class="td-manage">    
+	        <a  href="javascript:;"  onclick="member_del(this,'1')" title="删除" class="btn btn-xs btn-warning" ><i class="fa fa-trash  bigger-120"></i></a>
+	        <a  href="javascript:;"  onclick="member_del(this,'1')" title="回复" class="btn btn-xs btn-pink" ><i class="fa fa-envelope-o  bigger-120"></i></a>
+	      </td>
         </tr>
         </tbody>
       </table>
@@ -105,7 +119,7 @@
 </body>
 </html>
 <script type="text/javascript">
-/*留言查看*/
+/*简历查看*/
 function Guestbook_iew(id){
 	var index = layer.open({
         type: 1,
@@ -117,7 +131,7 @@ function Guestbook_iew(id){
 		btn:['确定','取消'],
 	})	
 };
-/*留言-删除*/
+/*删除*/
 function member_del(obj,id){
 	layer.confirm('确认要删除吗？',function(index){
 		$(obj).parents("tr").remove();

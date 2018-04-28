@@ -1,6 +1,7 @@
 package cn.qblank.resume.dao;
 
 import java.io.Serializable;
+import java.util.List;
 
 import cn.qblank.resume.entity.Resume;
 
@@ -24,10 +25,18 @@ public interface IResumeDao {
 	public void update(Resume resume);
 	
 	/**
-	 * 通过编号查找简历
+	 * 通过用户编号查找简历
 	 * @param id
 	 * @return
 	 */
-	public Resume findResumeById(Serializable id);
+	public Resume findResumeByUid(Serializable id);
+	
+	/**
+	 * 查看所有公开简历
+	 * 0: 保密
+	 * 1:公开
+	 * @return
+	 */
+	public List<Resume> findAllResume(String status);
 	
 }

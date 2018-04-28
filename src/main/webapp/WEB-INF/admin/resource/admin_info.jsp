@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -39,11 +40,11 @@
           </div>
           <div class="form-group"><label class="col-sm-3 control-label no-padding-right" for="form-field-1">性别： </label>
           <div class="col-sm-9">
-          <span class="sex">男</span>
+          <span class="sex">${adminUser.gender}</span>
             <div class="add_sex">
-            <label><input name="form-field-radio" type="radio" class="ace" checked="checked"><span class="lbl">保密</span></label>&nbsp;&nbsp;
-            <label><input name="form-field-radio" type="radio" class="ace"><span class="lbl">男</span></label>&nbsp;&nbsp;
-            <label><input name="form-field-radio" type="radio" class="ace"><span class="lbl">女</span></label>
+            <label><input name="form-field-radio" type="radio" class="ace" <c:if test="${empty adminUser.gender}">checked</c:if> ><span class="lbl">保密</span></label>&nbsp;&nbsp;
+            <label><input name="form-field-radio" type="radio" class="ace" <c:if test="${adminUser.gender == '男' }">checked</c:if> ><span class="lbl">男</span></label>&nbsp;&nbsp;
+            <label><input name="form-field-radio" type="radio" class="ace" <c:if test="${adminUser.gender == '女' }">checked</c:if> ><span class="lbl">女</span></label>
             </div>
            </div>
           </div>
@@ -60,10 +61,13 @@
           <div class="col-sm-9"><input type="text" name="QQ" id="website-title" value="${adminUser.qq }" class="col-xs-7 text_info" disabled="disabled"> </div>
           </div>
            <div class="form-group"><label class="col-sm-3 control-label no-padding-right" for="form-field-1">权限： </label>
-          <div class="col-sm-9" > <span>普通管理员</span></div>
+          <div class="col-sm-9" ><span>
+          	<c:if test="${adminUser.authority == 0 }">管理员</c:if>
+          	<c:if test="${adminUser.authority == 2 }">企业用户</c:if>
+          </span></div>
           </div>
            <div class="form-group"><label class="col-sm-3 control-label no-padding-right" for="form-field-1">注册时间： </label>
-          <div class="col-sm-9" > <span>${adminUser.registerTime }</span></div>
+          <div class="col-sm-9" > <span><fmt:formatDate value="${adminUser.registerTime }" pattern="yyyy-MM-dd"/></span></div>
           </div>
            <div class="Button_operation clearfix"> 
 				<button onclick="modify();" class="btn btn-danger radius" type="submit">修改信息</button>				
@@ -88,36 +92,21 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-        <td>15686</td>
-        <td>1</td>
-        <td>登录成功!</td>
-        <td>江苏南京</td>
-        <td>admin</td>
-        <td>61.233.7.80</td>
-        <td>2014-6-11 11:11:42</td>      
-      </tr>
-         <tr>
-        <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-        <td>15686</td>
-        <td>1</td>
-        <td>登录成功!</td>
-        <td>江苏南京</td>
-        <td>admin</td>
-        <td>61.233.7.80</td>
-        <td>2014-6-11 11:11:42</td>      
-      </tr>
-         <tr>
-        <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
-        <td>15686</td>
-        <td>1</td>
-        <td>登录成功!</td>
-        <td>江苏南京</td>
-        <td>admin</td>
-        <td>61.233.7.80</td>
-        <td>2014-6-11 11:11:42</td>      
-      </tr>
+    	<c:forEach items="${records }" var="record" varStatus="recordId">
+	      <tr>
+	        <td><label><input type="checkbox" class="ace"><span class="lbl"></span></label></td>
+	        <td>${recordId.count }</td>
+	        <td>${record.type }</td>
+	        <td>${record.loginContent }</td>
+	        <td>${record.address }</td>
+	        <td>
+	        	<c:if test="${record.username == '0' }">管理员</c:if>
+	        	<c:if test="${record.username == '2' }">企业用户</c:if>
+	        </td>
+	        <td>${record.loginUserIp }</td>
+	        <td>${record.loginTime}</td>
+	      </tr>
+	   </c:forEach>   
     </tbody>
   </table>
     </div>

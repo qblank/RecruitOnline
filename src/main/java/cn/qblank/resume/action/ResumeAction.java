@@ -50,9 +50,8 @@ public class ResumeAction extends ActionSupport implements ModelDriven<Resume>,S
 	public String resumeJsp() throws Exception{
 		//通过用户来绑定简历一对一
 		User user = (User) WebUtils.getSessionAttribute(request, "sessionUser");
-		logger.debug("用户编号:" + user.getId());
 		//回显数据
-		Resume resumeResult = resumeServce.findResumeById(user.getId());
+		Resume resumeResult = resumeServce.findResumeByUid(user.getId());
 		//存入session中
 		WebUtils.setSessionAttribute(request, "resumeResult", resumeResult);
 		/*ActionContext ac = ActionContext.getContext();
@@ -73,11 +72,12 @@ public class ResumeAction extends ActionSupport implements ModelDriven<Resume>,S
 		//可以通过用户绑定id
 		resume.setUid(user.getId());
 		//result用户获取数据库简历信息  resume用户获取提交的信息
-		Resume result = resumeServce.findResumeById(user.getId());
+		Resume result = resumeServce.findResumeByUid(user.getId());
 		
 		if (result == null) {
 			resumeServce.save(resume);
 		}else {
+			logger.debug(result.getRname());
 			resume.setRid(result.getRid());
 			switch (id) {
 				case "1":
@@ -141,7 +141,7 @@ public class ResumeAction extends ActionSupport implements ModelDriven<Resume>,S
 	}
 	
 	/**
-	 * 将网页内容导入word文档
+	 * 将网页内容导出pdf文档
 	 */
 	public String exportResume() throws Exception{
 		ServletInputStream in = request.getInputStream();

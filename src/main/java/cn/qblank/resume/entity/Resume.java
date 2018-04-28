@@ -63,9 +63,19 @@ public class Resume implements Serializable{
 	private String skills;					//技能
 	/**爱好**/
 	private String hobbies;					//爱好
+	//简历状态  0:保密  1:公开
+	private String status;
 	public Resume() {
 		
 	}
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
 	public Integer getRid() {
 		return rid;
 	}

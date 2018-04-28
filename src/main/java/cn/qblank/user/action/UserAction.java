@@ -23,6 +23,7 @@ import com.opensymphony.xwork2.ModelDriven;
 import cn.qblank.user.entity.User;
 import cn.qblank.user.service.IUserService;
 import cn.qblank.util.Constant;
+import cn.qblank.util.UserConstant;
 
 @Controller
 @Scope("prototype")
@@ -51,15 +52,18 @@ public class UserAction extends ActionSupport implements ModelDriven<User>,Servl
 	 */
 	public String login() throws Exception{
 		logger.debug("进行登陆控制");
-		user.setAuthority(1);
+		user.setAuthority(UserConstant.ORDUSER);
+		//进行编码处理
+		user.setUsername(new String(user.getUsername().getBytes("ISO8859-1"),"UTF-8"));
 		User result = userService.Login(user);
-		
+		logger.debug("用户名:" + user.getUsername());
 		if (result != null) {
 			WebUtils.setSessionAttribute(request, "login", "");
 			WebUtils.setSessionAttribute(request, "sessionUser", result);
 			return "success";
 		}
-		WebUtils.setSessionAttribute(request, "loginErr", "登陆失败,请重新登陆");
+		/*WebUtils.setSessionAttribute(request, "loginErr", "登陆失败,请重新登陆");*/
+		request.setAttribute("loginErr", "登陆失败，请重新登陆");
 		return "loginJsp";
 	}
 	/**
@@ -69,6 +73,7 @@ public class UserAction extends ActionSupport implements ModelDriven<User>,Servl
 	 */
 	public String loginJsp() throws Exception{
 		WebUtils.setSessionAttribute(request, "loginErr", "");
+		request.setAttribute("loginErr", "");
 		return "loginJsp";
 	}
 	

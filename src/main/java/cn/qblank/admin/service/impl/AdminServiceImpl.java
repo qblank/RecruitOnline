@@ -7,6 +7,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 
 import cn.qblank.admin.dao.IAdminUserDao;
+import cn.qblank.admin.entity.LoginRecord;
 import cn.qblank.admin.service.IAdminService;
 import cn.qblank.user.entity.User;
 
@@ -34,6 +35,16 @@ public class AdminServiceImpl implements IAdminService {
 	@Override
 	public void addUser(User user) {
 		adminUserDao.addUser(user);
+	}
+
+	@Override
+	public void insertLoginRecord(LoginRecord record) {
+		adminUserDao.insertLoginRecord(record);
+	}
+
+	@Override
+	public List<LoginRecord> findAllRecordByUser(User user) {
+		return adminUserDao.findAllRecordByUser(user);
 	}
 
 }

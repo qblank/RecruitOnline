@@ -36,7 +36,9 @@
         </div>
     </div>
    
-    <%@include file="./booter.jsp" %>
+    <div class="boot">
+    	<%@include file="./booter.jsp" %>
+    </div>
 </body>
 <script src="js/login.js"></script>
 <script src="js/bg.js"></script>

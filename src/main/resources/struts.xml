@@ -21,5 +21,7 @@
 	<include file="cn/qblank/job/action/jobAction.xml"></include>
 	<!-- 管理员模块 -->
 	<include file="cn/qblank/admin/action/adminAction.xml"></include>
+	<!-- 职位模块 -->
+	<include file="cn/qblank/position/action/positionAction.xml"></include>
 	
 </struts>

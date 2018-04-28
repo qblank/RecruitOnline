@@ -1,7 +1,6 @@
 package cn.qblank.user.dao;
 
-import java.io.Serializable;
-
+import cn.qblank.resume.entity.Resume;
 import cn.qblank.user.entity.User;
 
 public interface IUserDao {
@@ -23,6 +22,12 @@ public interface IUserDao {
 	 */
 	boolean revisePwd(User user);
 	
+	/**
+	 * 通过用户查简历
+	 * @param user
+	 * @return
+	 */
+	Resume findResumeByUser(User user);
 	
 	/***管理员***/
 	
@@ -32,4 +37,6 @@ public interface IUserDao {
 	 * @return
 	 */
 	User findUserById(Integer uid);
+	
+	
 }

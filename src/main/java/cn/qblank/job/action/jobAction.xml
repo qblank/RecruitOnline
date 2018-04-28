@@ -9,6 +9,7 @@
 		<action name="job_*" class="jobAction" method="{1}">
 			<result name="firmDetail">/WEB-INF/jsp/firmDetail.jsp</result>
 			<result name="jobdetail">/WEB-INF/jsp/jobdetail.jsp</result>
+			<result name="jobFair">/WEB-INF/jsp/jobFair.jsp</result>
 		</action>
 		<action name="index" class="jobAction" method="indexJsp">
 			<!-- 访问主页面 -->

@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import cn.qblank.admin.dao.IAdminUserDao;
+import cn.qblank.admin.entity.LoginRecord;
 import cn.qblank.user.entity.User;
 
 @Repository
@@ -49,6 +50,22 @@ public class AdminUserDao implements IAdminUserDao {
 	@Override
 	public void addUser(User user) {
 		sessionFactory.getCurrentSession().save(user);
+	}
+
+	@Override
+	public void insertLoginRecord(LoginRecord record) {
+		sessionFactory.getCurrentSession().save(record);
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<LoginRecord> findAllRecordByUser(User user) {
+		Query q = sessionFactory.getCurrentSession().createQuery("from LoginRecord where uid = ?").setParameter(0, user.getId());
+		if (q.list().size() > 0) {
+			List<LoginRecord> records = q.list();
+			return records;
+		}
+		return null;
 	}
 
 }

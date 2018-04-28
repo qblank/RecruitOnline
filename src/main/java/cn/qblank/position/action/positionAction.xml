@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	
+<struts>
+    <!-- 职位Action管理 -->
+	<package name="position" extends="struts-default" namespace="/" strict-method-invocation="false">
+		<action name="position_*" class="positionAction" method="{1}">
+			<result name="posdetail">/WEB-INF/jsp/index.jsp</result>
+		</action>
+	</package>
+	
+</struts>

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import cn.qblank.resume.entity.Resume;
 import cn.qblank.user.dao.IUserDao;
 import cn.qblank.user.entity.User;
 import cn.qblank.user.service.IUserService;
@@ -35,6 +36,11 @@ public class UserServiceImpl implements IUserService{
 	@Override
 	public User findUserById(Integer uid) {
 		return userDao.findUserById(uid);
+	}
+
+	@Override
+	public Resume findResumeByUser(User user) {
+		return userDao.findResumeByUser(user);
 	}
 
 	

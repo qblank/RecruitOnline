@@ -81,6 +81,17 @@ public class JobAction extends ActionSupport implements ServletRequestAware{
 		}
 		return "jobdetail";
 	}
+	
+	/**
+	 * 进入招聘会的页面
+	 * @return
+	 * @throws Exception
+	 */
+	public String jobFair() throws Exception{
+		
+		
+		return "jobFair";
+	}
 
 	@Override
 	public void setServletRequest(HttpServletRequest request) {

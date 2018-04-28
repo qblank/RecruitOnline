@@ -37,6 +37,7 @@ public class LoginFilter implements Filter {
 	private static final String DEFAULT_URI_SEPARATOR = "/";
 	private static final String PUBLICURL_CONTEXT_ID = "recruit.web.publicUrl";
 	private static final String LOGINEDURL_CONTEXT_ID = "recruit.web.loginedUrl";
+	private static final String ADMINURL_CONTEXT_ID = "recruit.web.adminUrl";
 	
 	private FilterConfig config;
 	/**
@@ -46,8 +47,8 @@ public class LoginFilter implements Filter {
 	private void initFilter(ServletContext context) {
 		initPublicUrl(context);
 		initLoginUrl(context);
-		
-		logger.info("权限过滤器初始化成功,[" + PUBLICURL_CONTEXT_ID + "," + LOGINEDURL_CONTEXT_ID + "]初始化成功");
+		initAdminUrl(context);
+		logger.info("权限过滤器初始化成功,[" + PUBLICURL_CONTEXT_ID + "," + LOGINEDURL_CONTEXT_ID + ","+ ADMINURL_CONTEXT_ID +"]初始化成功");
 	}
 	
 	
@@ -79,17 +80,18 @@ public class LoginFilter implements Filter {
 			return;
 		}
 		
+		//判断是否是管理员登陆
+		if (!isAdminLogin(req)) {
+			resp.sendRedirect("admin_adminLoginJsp.action");
+			return;
+		}
 		//是否已登陆
-		if (!isLogin(req)) {
+		if (!isLogin(req) && !isAdminLogin(req)) {
 			resp.sendRedirect("user_loginJsp.action");
 			return;
-		}else {
-			/*//判断是否是管理员登陆
-			if(!isAdminLogin(req)){
-				resp.sendRedirect("admin_adminLoginJsp.action");
-				return;
-			}*/
 		}
+		
+		
 		chain.doFilter(req, resp);
 		
 	}
@@ -124,7 +126,8 @@ public class LoginFilter implements Filter {
 				"/user_register.action",
 				"/job_firmDetail.action",
 				"/job_jobdetail.action",
-				"/admin_adminLoginJsp.action"
+				"/admin_adminLoginJsp.action",
+				"/admin_adminLogin.action"
 		};
 		
 		Map<String,String> publicUrlMap = new ConcurrentHashMap<>();
@@ -150,6 +153,21 @@ public class LoginFilter implements Filter {
 			loginedUrlMap.put(loginedUrl, loginedUrl);
 		}
 		context.setAttribute(LOGINEDURL_CONTEXT_ID, loginedUrlMap);
+	}
+	
+	/**
+	 * 初始化管理员登陆才能访问的url
+	 * @param context
+	 */
+	private void initAdminUrl(ServletContext context) {
+		final String[] ADMIN_URLS = {
+				"/admin_adminIndex.action"
+		};
+		Map<String,String> adminUrlMap = new ConcurrentHashMap<>();
+		for (String adminUrl : ADMIN_URLS) {
+			adminUrlMap.put(adminUrl, adminUrl);
+		}
+		context.setAttribute(ADMINURL_CONTEXT_ID, adminUrlMap);
 	}
 	
 	/**
@@ -215,7 +233,7 @@ public class LoginFilter implements Filter {
 		context.removeAttribute(LOGINEDURL_CONTEXT_ID);
 		this.config = null;
 		
-		logger.info("权限过滤器销毁成功,[" + PUBLICURL_CONTEXT_ID + "," + LOGINEDURL_CONTEXT_ID + "]移除成功");
+		logger.info("权限过滤器销毁成功,[" + PUBLICURL_CONTEXT_ID + "," + LOGINEDURL_CONTEXT_ID + "," + ADMINURL_CONTEXT_ID +"]移除成功");
 	}
 
 	public void destroy() {
