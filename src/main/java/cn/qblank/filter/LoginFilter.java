@@ -80,22 +80,23 @@ public class LoginFilter implements Filter {
 			return;
 		}
 		
+		
 		//判断是否是管理员登陆
 		if (!isAdminLogin(req)) {
 			resp.sendRedirect("admin_adminLoginJsp.action");
 			return;
 		}
+		
 		//是否已登陆
-		if (!isLogin(req) && !isAdminLogin(req)) {
+		if (!isLogin(req) && isLoginedPublicUri(uri)) {
 			resp.sendRedirect("user_loginJsp.action");
 			return;
 		}
 		
-		
 		chain.doFilter(req, resp);
 		
 	}
-	
+								
 	/**
 	 * 获取返回的Uri
 	 * @param request
@@ -127,7 +128,11 @@ public class LoginFilter implements Filter {
 				"/job_firmDetail.action",
 				"/job_jobdetail.action",
 				"/admin_adminLoginJsp.action",
-				"/admin_adminLogin.action"
+				"/admin_adminLogin.action",
+				"/job_jobFair.action",
+				"/job_searchPage.action",
+				"/user_identityCode.action",
+				"/user_registerJsp.action"
 		};
 		
 		Map<String,String> publicUrlMap = new ConcurrentHashMap<>();
@@ -192,6 +197,7 @@ public class LoginFilter implements Filter {
 	private boolean isLogin(HttpServletRequest request) {
 		Object sessionUser = WebUtils.getSessionAttribute(request, "sessionUser");
 		return (sessionUser != null && !sessionUser.equals(""));
+		
 	}
 	
 	/**
@@ -210,11 +216,11 @@ public class LoginFilter implements Filter {
 	 * @param uri
 	 * @return
 	 */
-	@SuppressWarnings({ "unchecked", "unused" })
+	@SuppressWarnings({ "unchecked" })
 	private boolean isLoginedPublicUri(String uri) {
 		String subUri = uri.substring(uri.lastIndexOf(DEFAULT_URI_SEPARATOR), uri.length());
 		
-        Map<String,String>loginedUrlMap = (Map<String,String>)this.config.getServletContext().getAttribute(LOGINEDURL_CONTEXT_ID);
+        Map<String,String> loginedUrlMap = (Map<String,String>)this.config.getServletContext().getAttribute(LOGINEDURL_CONTEXT_ID);
 		
 		return loginedUrlMap.containsKey(subUri);
 	}
