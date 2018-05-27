@@ -68,4 +68,15 @@ public class AdminUserDao implements IAdminUserDao {
 		return null;
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public String lastLoginTime() {
+		String hql = "from LoginRecord order by id desc";
+		List<LoginRecord> loginRecords = sessionFactory.getCurrentSession().createQuery(hql).list();
+		if (loginRecords != null && loginRecords.size() > 0) {
+			return loginRecords.get(0).getLoginTime();
+		}
+		return null;
+	}
+
 }

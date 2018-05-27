@@ -31,7 +31,7 @@
 <div class="page-content clearfix">
  <div class="alert alert-block alert-success">
   <button type="button" class="close" data-dismiss="alert"><i class="icon-remove"></i></button>
-  <i class="icon-ok green"></i>欢迎使用<strong class="green">后台管理系统<small>(测试版)</small></strong>,当前时间为<span id="curTime"><span>，登陆IP:192.168.1.110.	
+  <i class="icon-ok green"></i>欢迎使用<strong class="green">后台管理系统<small>(测试版)</small></strong>,上次登录时间为<span>${lastLoginTime }<span>，登陆IP:${loginIp}.	
  </div>
  <div class="state-overview clearfix">
                   <div class="col-lg-3 col-sm-6">
@@ -41,7 +41,7 @@
                                  <i class="icon-user"></i>
                               </div>
                               <div class="value">
-                                  <h1>34522</h1>
+                                  <h1>72</h1>
                                   <p>网站企业</p>
                               </div>
                           </a>

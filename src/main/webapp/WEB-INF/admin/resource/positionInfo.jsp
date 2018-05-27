@@ -9,10 +9,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta http-equiv="Cache-Control" content="no-siteapp" />
  		<link href="resource/assets/css/bootstrap.min.css" rel="stylesheet" />
-        <link rel="stylesheet" href="resource/css/style.css"/>       
+ 		<link rel="stylesheet" href="resource/assets/css/ace.min.css" />
         <link href="resource/assets/css/codemirror.css" rel="stylesheet">
-        <link rel="stylesheet" href="resource/assets/css/ace.min.css" />
         <link rel="stylesheet" href="resource/font/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="resource/css/style.css"/>       
         <!--[if lte IE 8]>
 		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
 		<![endif]-->
@@ -24,6 +24,13 @@
         <script src="resource/assets/layer/layer.js" type="text/javascript" ></script>          
         <script src="resource/assets/laydate/laydate.js" type="text/javascript"></script>
 <title>留言</title>
+<style type="text/css">
+	.layui-layer-btn .layui-layer-btn0 {
+	    border-color: #4898d5;
+	    background-color: #2e8ded;
+	    color: #fff;
+	}
+</style>
 </head>
 
 <body>

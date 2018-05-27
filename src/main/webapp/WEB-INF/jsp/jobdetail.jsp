@@ -8,12 +8,13 @@
     <title>公司详情页</title>
     <link rel="stylesheet" href="css/jobdetail.css">
     <link rel="stylesheet" href="css/base.css">
+    <script type="text/javascript" src="js/jobdetail.js"></script>
 </head>
 <body>
 	<%@include file="./header.jsp" %>
     <div class="jobtetail_wrap">
         <div class="jobdetailInfowrap">
-            <h2>${position.pname}</h2>
+            <h4>${position.pname}</h4>
             <ul>
                 <li class="cJobDetailTit">来&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;自:</li>
                 <li class="marb">校园招聘网</li>
@@ -38,7 +39,7 @@
                 </li>
             </ul>
         </div>
-        <button class="postjob">立刻投递</button>
+        <button class="postjob" id="postjob">立刻投递</button>
         <div class="jobdetailtab">
             <ul>
                 <li><a href="#">职位描述</a></li>
@@ -74,4 +75,11 @@
     </div>
     <%@include file="./booter.jsp" %>
 </body>
+<script type="text/javascript">
+	var postjob = document.getElementById("postjob");
+	postjob.onclick = function(){
+		alert("投递成功!!!");
+		postjob.style.backgroundColor = "gray";
+	}
+</script>
 </html>

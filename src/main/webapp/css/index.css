@@ -19,6 +19,7 @@ ul{
     height: 480px;
     text-align: center;
     background-color: #6E6568;
+    /* background-color: #00ABEB; */
 }
 /*ul*/
 .content .content_left .left_nav{
@@ -342,7 +343,8 @@ ul{
 }
 
 .left_list ul li a:hover{
-    background-color: #E01222;
+    /* background-color: #E01222; */
+    background-color: #00ABEB;
 }
 
 

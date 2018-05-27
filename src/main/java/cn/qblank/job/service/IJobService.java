@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import cn.qblank.job.entity.Firm;
+import cn.qblank.job.entity.JobFair;
 import cn.qblank.job.entity.Position;
 
 public interface IJobService {
@@ -33,4 +34,14 @@ public interface IJobService {
 	 * @return
 	 */
 	List<Position> findPosByFirm(Firm firm);
+	/**
+	 * 查找所有招聘会
+	 * @return
+	 */
+	List<JobFair> findAllJobFair();
+	/**
+	 * 通过名字模糊查出公司列表
+	 * @return
+	 */
+	List<Firm> findFirmByName(String searchName);
 }

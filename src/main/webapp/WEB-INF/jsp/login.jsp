@@ -25,9 +25,12 @@
                 <i class="fa fa-key" aria-hidden="true"></i>
                 <input type="password" placeholder="输入密码" id="pwd" name="pwd">
                 <span id="pwdMsg" class="pwdMsg"></span>
-                <br><br>
-                <input type="checkbox" id="remeber" />下次自动登录<a href="#">忘记密码?</a>
-                去<a href="/Recruit/user_registerJsp.action">注册</a>
+                <br>
+                <input type="text" placeholder="输入验证码" name="secode" id="secode_inp" /><img id="secode" src="${pageContext.request.contextPath }/user_identityCode.action" width="85px" height="30px">
+                <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="${pageContext.request.contextPath }/user_registerJsp.action">没有账号?</a>
+                	去<a href="${pageContext.request.contextPath }/user_registerJsp.action">注册</a>
                 <br><br>
                 <input type="submit" value="登录" class="login_btn" />
                  <span class="loginErr">${loginErr}</span>

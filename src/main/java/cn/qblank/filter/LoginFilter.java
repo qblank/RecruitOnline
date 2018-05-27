@@ -51,27 +51,12 @@ public class LoginFilter implements Filter {
 		logger.info("权限过滤器初始化成功,[" + PUBLICURL_CONTEXT_ID + "," + LOGINEDURL_CONTEXT_ID + ","+ ADMINURL_CONTEXT_ID +"]初始化成功");
 	}
 	
-	
 	/**
 	 * 设置过滤条件
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpServletResponse resp = (HttpServletResponse) response;
-		/*User sessionUser = (User) WebUtils.getSessionAttribute(req, "sessionUser");
-		if (obj == null || "".equals(obj)) {
-			resp.sendRedirect("user_loginJsp.action");
-		}
-		User sessionUser = (User) obj;
-		String uri = req.getRequestURI();
-		String url = getUrl(req);
-		logger.debug(url);
-		logger.debug("用户信息:" + sessionUser);
-		if (sessionUser == null && !uri.endsWith("loginJsp.action")) {
-			resp.sendRedirect("../user_loginJsp.action");
-			return;
-		}
-		chain.doFilter(req, resp);*/
 		String uri = getUrl(req);
 		logger.debug(uri);
 		//判断是否是公共资源
@@ -80,21 +65,17 @@ public class LoginFilter implements Filter {
 			return;
 		}
 		
-		
 		//判断是否是管理员登陆
-		if (!isAdminLogin(req)) {
+		if (!isAdminLogin(req) && isAdminPublicUri(uri)) {
 			resp.sendRedirect("admin_adminLoginJsp.action");
 			return;
 		}
-		
 		//是否已登陆
 		if (!isLogin(req) && isLoginedPublicUri(uri)) {
 			resp.sendRedirect("user_loginJsp.action");
 			return;
 		}
-		
 		chain.doFilter(req, resp);
-		
 	}
 								
 	/**
@@ -110,7 +91,6 @@ public class LoginFilter implements Filter {
 				uri = new StringBuffer(uri).append("?action=").append(action).toString();
 			}
 		}
-		
 		return uri;
 	}
 	
@@ -188,7 +168,6 @@ public class LoginFilter implements Filter {
 		
 		return publicUrlMap.containsKey(subUri);
 	}
-	
 	/**
 	 * 判断是否登陆
 	 * @param request
@@ -199,7 +178,6 @@ public class LoginFilter implements Filter {
 		return (sessionUser != null && !sessionUser.equals(""));
 		
 	}
-	
 	/**
 	 * 判断是否是管理员登陆
 	 * @param request
@@ -209,10 +187,8 @@ public class LoginFilter implements Filter {
 		Object adminUser = WebUtils.getSessionAttribute(request, "adminUser");
 		return (adminUser !=null && !adminUser.equals(""));
 	}
-	
 	/**
 	 * 登陆后可访问的公共url.
-	 * 
 	 * @param uri
 	 * @return
 	 */
@@ -224,7 +200,14 @@ public class LoginFilter implements Filter {
 		
 		return loginedUrlMap.containsKey(subUri);
 	}
-	
+	@SuppressWarnings("unchecked")
+	private boolean isAdminPublicUri(String uri) {
+		String subUri = uri.substring(uri.lastIndexOf(DEFAULT_URI_SEPARATOR), uri.length());
+		
+        Map<String,String> adminUrlMap = (Map<String,String>)this.config.getServletContext().getAttribute(ADMINURL_CONTEXT_ID);
+		
+		return adminUrlMap.containsKey(subUri);
+	}
 	public void init(FilterConfig config) throws ServletException {
 		this.config = config;
 		initFilter(this.config.getServletContext());
@@ -241,7 +224,6 @@ public class LoginFilter implements Filter {
 		
 		logger.info("权限过滤器销毁成功,[" + PUBLICURL_CONTEXT_ID + "," + LOGINEDURL_CONTEXT_ID + "," + ADMINURL_CONTEXT_ID +"]移除成功");
 	}
-
 	public void destroy() {
 		destroyFilter();
 	}

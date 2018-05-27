@@ -69,7 +69,7 @@ public class UserDaoimpl  implements IUserDao{
 		String hql = "from Resume where rid = ?";
 		Query q = sessionFactory.getCurrentSession().createQuery(hql).setParameter(0, user.getRid());
 		List<Resume> list = q.list();
-		if (list != null) {
+		if (list != null && list.size() > 0) {
 			Resume resume = list.get(0);
 			return resume;
 		}

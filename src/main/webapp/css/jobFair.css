@@ -2,8 +2,8 @@
 
 .jobFairwrap{
     width: 780px;
-    height: 580px;
-    border: 1px solid #aaa;
+    height: 700px;
+    /* border: 1px solid #aaa; */
     margin: 50px auto;
 }
 
@@ -86,3 +86,44 @@
 	float:left;
 	height:50px;
 } */
+.jobFairwrap .page{
+	width:780px;
+	height: 100px;
+	margin:10px auto;
+	float: left;
+	text-align: center;
+}
+.jobFairwrap .page .pagination{
+	float: left;
+	margin-top:10px;
+	text-align: center;
+}
+
+.jobFairwrap .page .pagination li{
+	padding:0;
+	margin:0;
+	width: 50px;
+	/* border: 1px solid #aaa; */
+	text-align: center;
+}
+
+.jobFairwrap .page .pagination li a{
+	display:inline-block;
+	width:30px;
+	height:30px;
+	border: 1px solid #ccc;
+	line-height:30px;
+	text-align: center;
+}
+
+.jobFairwrap .page .pagination li a:hover{
+	background-color:#FF8D22;
+	border:1px solid #FF8D22;
+	color:white;
+}
+
+.current{
+	background-color:#FF8D22;
+	border:1px solid #FF8D22;
+	color:white;
+}

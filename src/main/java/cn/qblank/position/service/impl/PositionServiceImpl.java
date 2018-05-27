@@ -30,4 +30,14 @@ public class PositionServiceImpl implements IPositionService{
 		return positionDao.findAllPos();
 	}
 
+	@Override
+	public int countPos() {
+		return positionDao.countPos();
+	}
+
+	@Override
+	public List<Position> findByName(String searchName) {
+		return positionDao.findByName(searchName);
+	}
+
 }

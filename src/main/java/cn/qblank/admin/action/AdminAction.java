@@ -31,8 +31,6 @@ import cn.qblank.resume.entity.Resume;
 import cn.qblank.resume.service.IResumeService;
 import cn.qblank.user.entity.User;
 import cn.qblank.user.service.IUserService;
-import cn.qblank.util.TimeUtil;
-import cn.qblank.util.UserConstant;
 import cn.qblank.util.Utils;
 import net.sf.json.JSONObject;
 @Controller
@@ -71,13 +69,20 @@ public class AdminAction extends ActionSupport implements ServletRequestAware,Se
 			
 			//插入登陆记录
 			LoginRecord record = new LoginRecord();
+			//获取上次登录的时间
+			String lastLoginTime = adminService.lastLoginTime();
+			WebUtils.setSessionAttribute(request, "lastLoginTime", lastLoginTime);
+			
 			setLoginRecord(adminUser, record);
 			adminService.insertLoginRecord(record);
+			WebUtils.setSessionAttribute(request, "loginIp", record.getLoginUserIp());
 			return "adminIndex";
 		}
 		request.setAttribute("adminLoginErr", "登陆失败");
 		return "adminLoginJsp";
 	}
+	
+	
 
 	/**
 	 * 首页框架
@@ -107,11 +112,11 @@ public class AdminAction extends ActionSupport implements ServletRequestAware,Se
 	 */
 	private void setLoginRecord(User adminUser, LoginRecord record) {
 		record.setUid(adminUser.getId());
-		record.setLoginTime(TimeUtil.DateToString(new Date(), "yyyy-MM-dd hh:mm:ss"));
+		record.setLoginTime(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()).toString());
 		record.setLoginContent("登陆成功");
 		record.setLoginUserIp(Utils.getIPAddress(request));
 		record.setUsername(adminUser.getAuthority().toString());
-		record.setAddress("广东");
+		record.setAddress("湖南");
 		record.setType("web端");
 	}
 	

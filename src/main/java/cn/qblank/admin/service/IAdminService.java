@@ -39,4 +39,9 @@ public interface IAdminService {
 	 * @return
 	 */
 	public List<LoginRecord> findAllRecordByUser(User user);
+	/**
+	 * 获取上次登录时间
+	 * @return
+	 */
+	public String lastLoginTime();
 }

@@ -2,6 +2,7 @@ package cn.qblank.user.action;
 
 
 
+import java.awt.image.BufferedImage;
 import java.io.PrintWriter;
 import java.net.URLDecoder;
 
@@ -20,10 +21,12 @@ import org.springframework.web.util.WebUtils;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
+import cn.qblank.position.service.IPositionService;
 import cn.qblank.user.entity.User;
 import cn.qblank.user.service.IUserService;
 import cn.qblank.util.Constant;
 import cn.qblank.util.UserConstant;
+import cn.qblank.util.VerifyCode;
 
 @Controller
 @Scope("prototype")
@@ -34,8 +37,14 @@ public class UserAction extends ActionSupport implements ModelDriven<User>,Servl
 	private HttpServletResponse response;
 	@Autowired
 	private IUserService userService;
+	@Autowired
+	private IPositionService positionService;
 	//回到主页面
 	public String index() throws Exception{
+		//获取职位数量
+		int positionCount = positionService.countPos();
+		logger.debug("个数为:" + positionCount);
+		WebUtils.setSessionAttribute(request, "positionCount", positionCount);
 		return "success";
 	}
 	//模型驱动注入
@@ -57,13 +66,21 @@ public class UserAction extends ActionSupport implements ModelDriven<User>,Servl
 		user.setUsername(new String(user.getUsername().getBytes("ISO8859-1"),"UTF-8"));
 		User result = userService.Login(user);
 		logger.debug("用户名:" + user.getUsername());
+		//获取验证吗
+		String secode = request.getParameter("secode");
+		Object sessionCode = WebUtils.getSessionAttribute(request, "secode");
 		if (result != null) {
-			WebUtils.setSessionAttribute(request, "login", "");
-			WebUtils.setSessionAttribute(request, "sessionUser", result);
-			return "success";
+			if (!secode.equals(sessionCode)) {
+				request.setAttribute("loginErr", "验证码错误");
+				return "loginJsp";
+			}else {
+				WebUtils.setSessionAttribute(request, "login", "");
+				WebUtils.setSessionAttribute(request, "sessionUser", result);
+				return "success";
+			}
 		}
 		/*WebUtils.setSessionAttribute(request, "loginErr", "登陆失败,请重新登陆");*/
-		request.setAttribute("loginErr", "登陆失败，请重新登陆");
+		request.setAttribute("loginErr", "用户名或密码错误，请重新登陆");
 		return "loginJsp";
 	}
 	/**
@@ -150,11 +167,12 @@ public class UserAction extends ActionSupport implements ModelDriven<User>,Servl
 	 * @throws Exception
 	 */
 	public void selectPage() throws Exception{
-		/*String pageId = request.getParameter("pageId");
+		String pageId = request.getParameter("pageId");
+		logger.debug("页号:" + pageId);
 		int pid = 0;
 		if (pageId != null && !"".equals(pageId)) {
 			pid = Integer.parseInt(pageId);
-		}*/
+		}
 		String txt = request.getParameter("txt").trim();
 		logger.debug(txt);
 		PrintWriter pw = response.getWriter();
@@ -182,6 +200,25 @@ public class UserAction extends ActionSupport implements ModelDriven<User>,Servl
 				break;
 		}
 		pw.close();
+	}
+	
+	/**
+	 * 产生验证码
+	 * @return
+	 */
+	public void identityCode() throws Exception{
+		//创建对象
+		VerifyCode vc = new VerifyCode();
+		//获取验证码
+		BufferedImage image = vc.getImage();
+		//得到验证码的字符串图片
+		String rcode = vc.getText();
+		//实现验证码不区分大小写
+		rcode = rcode.toLowerCase();
+		//将字符串的验证码存入session中
+		WebUtils.setSessionAttribute(request, "secode", rcode);
+		VerifyCode.output(image, response.getOutputStream());
+		
 	}
 	
 	/**

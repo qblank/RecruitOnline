@@ -65,7 +65,7 @@
             <div class="cCompanySearchTopWrap" id="cCompanySearchTopWrap">
 
                 <div class="cCompanySearchInfor">
-                    共有<b>1</b>家分公司，<b>1</b>个职位
+                    共有<b>0</b>家分公司，<b>1</b>个职位
                 </div>
             </div>
 
@@ -80,7 +80,7 @@
                             <c:forEach items="${positions}" var="position">
 	                            <li>
 	                            	<h4><a href="${pageContext.request.contextPath }/job_jobdetail.action?pid=${position.pid}">${position.pname}</a></h4>
-	                                <span>${position.pnum}个职位</span>
+	                                <span>1个职位</span>
 	                            </li>
                             </c:forEach>
                         </ul>
@@ -89,5 +89,8 @@
             </div>
         </div>
     </div>
+    
+    
+    <%@include file="./booter.jsp" %>
 </body>
 </html>

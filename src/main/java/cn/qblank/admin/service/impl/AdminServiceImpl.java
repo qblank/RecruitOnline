@@ -47,4 +47,9 @@ public class AdminServiceImpl implements IAdminService {
 		return adminUserDao.findAllRecordByUser(user);
 	}
 
+	@Override
+	public String lastLoginTime() {
+		return adminUserDao.lastLoginTime();
+	}
+
 }

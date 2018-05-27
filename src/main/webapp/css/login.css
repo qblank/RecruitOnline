@@ -1,6 +1,6 @@
 .login_wrap{
     width: 400px;
-    height: 300px;
+    height: 350px;
     margin: 100px auto;
     background-color: #FFFFFF;
     opacity: 0.6;
@@ -59,6 +59,22 @@
 	float:left;
 	margin: 46px 35px;
 		
+}
+#secode{
+	cursor: pointer;
+	padding-left: 10px;
+	vertical-align: bottom;
+	padding-top: 10px;
+	margin-bottom: 10px;
+}
+
+#secode_inp{
+	width: 70px;
+	height: 10px;
+	margin-left:20px;
+	vertical-align:bottom;
+	padding-top: 10px;
+	margin-bottom:10px;
 }
 
 .boot{

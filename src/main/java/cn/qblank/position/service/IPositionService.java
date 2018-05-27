@@ -22,4 +22,15 @@ public interface IPositionService {
 	 * @return
 	 */
 	List<Position> findAllPos();
+	/**
+	 * 获取所有职位数量
+	 * @return
+	 */
+	int countPos();
+	/**
+	 * 搜索查出职位列表
+	 * @param searchName
+	 * @return
+	 */
+	List<Position> findByName(String searchName);
 }

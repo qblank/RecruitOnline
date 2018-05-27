@@ -11,6 +11,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import cn.qblank.job.dao.IJobDao;
 import cn.qblank.job.entity.Firm;
+import cn.qblank.job.entity.JobFair;
+import cn.qblank.job.entity.JobFairShow;
 import cn.qblank.job.entity.Position;
 
 @Repository
@@ -56,6 +58,27 @@ public class JobDaoImpl implements IJobDao{
 		
 		List<Position> positions = q.list();
 		return positions;
+	}
+
+	@Override
+	public List<JobFair> findAllJobFair() {
+		String hql = "from JobFair";
+		Query q = sessionFactory.getCurrentSession().createQuery(hql);
+		if (q.list().size() > 0) {
+			List<JobFair> jobFairs = q.list();
+			return jobFairs;
+		}
+		return null;
+	}
+
+	@Override
+	public List<Firm> findFirmByName(String searchName) {
+		Query q = sessionFactory.getCurrentSession().createQuery("from Firm where fname like '%" + searchName +"%'");
+		List<Firm> firms = q.list();
+		if (firms != null &&firms.size() > 0) {
+			return firms;
+		}
+		return null;
 	}
 	
 	

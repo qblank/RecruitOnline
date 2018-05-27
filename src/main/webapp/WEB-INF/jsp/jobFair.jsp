@@ -14,7 +14,7 @@
    <!--  <link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css"> -->
     <script type="text/javascript" src="js/jquery-1.8.2.js"></script>
     <!-- <script type="text/javascript" src="css/bootstrap/js/bootstrap.min.js"></script> -->
-    
+    <script type="text/javascript" src="js/jobFair.js"></script>
 </head>
 <body>
 	<%@include file="./header.jsp" %>
@@ -42,101 +42,47 @@
         </form>
         <div class="jobFairList lh19">
             <ul>
-                <li>
-                    <div class="weightConpanyName weight">
-                        <span>皇家医学院</span>
-                    </div>
-                    <div class="weight">
-                        <span class="weightSchoolName">长沙医学院</span>
-                        <span class="weightCity">[长沙]</span>
-                    </div>
-                    <div class="weightPos font14 gray">
-                        <span class="weightAddress" title="雷锋大道">雷锋大道</span>
-                        <span class="orangeFont">4</span>人关注
-                    </div>
-                    <div class="weightHoldTime font14 gray">
-                        2018-01-20  15:00-17:00
-                    </div>
-                    <div class="clearFix">
-                        <button class="btn_depart">立即参加</button>
-                    </div>
-                </li>
-                <li>
-                    <div class="weightConpanyName weight">
-                        <span>皇家医学院</span>
-                    </div>
-                    <div class="weight">
-                        <span class="weightSchoolName">长沙医学院</span>
-                        <span class="weightCity">[长沙]</span>
-                    </div>
-                    <div class="weightPos font14 gray">
-                        <span class="weightAddress" title="雷锋大道">雷锋大道</span>
-                        <span class="orangeFont">4</span>人关注
-                    </div>
-                    <div class="weightHoldTime font14 gray">
-                        2018-01-20  15:00-17:00
-                    </div>
-                    <div class="clearFix">
-                        <button class="btn_depart">立即参加</button>
-                    </div>
-                </li>
-                <li>
-                    <div class="weightConpanyName weight">
-                        <span>皇家医学院</span>
-                    </div>
-                    <div class="weight">
-                        <span class="weightSchoolName">长沙医学院</span>
-                        <span class="weightCity">[长沙]</span>
-                    </div>
-                    <div class="weightPos font14 gray">
-                        <span class="weightAddress" title="雷锋大道">雷锋大道</span>
-                        <span class="orangeFont">4</span>人关注
-                    </div>
-                    <div class="weightHoldTime font14 gray">
-                        2018-01-20  15:00-17:00
-                    </div>
-                    <div class="clearFix">
-                        <button class="btn_depart">立即参加</button>
-                    </div>
-                </li>
-                <li>
-                    <div class="weightConpanyName weight">
-                        <span>皇家医学院</span>
-                    </div>
-                    <div class="weight">
-                        <span class="weightSchoolName">长沙医学院</span>
-                        <span class="weightCity">[长沙]</span>
-                    </div>
-                    <div class="weightPos font14 gray">
-                        <span class="weightAddress" title="雷锋大道">雷锋大道</span>
-                        <span class="orangeFont">4</span>人关注
-                    </div>
-                    <div class="weightHoldTime font14 gray">
-                        2018-01-20  15:00-17:00
-                    </div>
-                    <div class="clearFix">
-                        <button class="btn_depart">立即参加</button>
-                    </div>
-                </li>
+            	<c:forEach items="${jobFairShows}" var="jobFairShow" varStatus="job" end="5">
+	                <li>
+	                    <div class="weightConpanyName weight">
+	                        <span>${jobFairShow.companyName }</span>
+	                    </div>
+	                    <div class="weight">
+	                        <span class="weightSchoolName">${jobFairShow.schoolName }</span>
+	                        <span class="weightCity">[${jobFairShow.city}]</span>
+	                    </div>
+	                    <div class="weightPos font14 gray">
+	                        <span class="weightAddress" title="雷锋大道">${jobFairShow.address }</span>
+	                        <span class="orangeFont">4</span>人关注
+	                    </div>
+	                    <div class="weightHoldTime font14 gray">
+	                        ${jobFairShow.startTime }-${jobFairShow.endTime }
+	                    </div>
+	                    <div class="clearFix">
+	                        <button class="btn_depart" id="btn_depart${job.count}" onclick="departJobFair(${job.count})">立即参加</button>
+	                    </div>
+	                </li>
+                </c:forEach>
             </ul>
+             <!-- 分页 -->
+	        <div class="page">
+	        	<ul class="pagination">
+				    <li><a href="javascript:void(0)" id="lastPage">&laquo;</a></li>
+				    <li><a href="javascript:void(0)" class="current num">1</a></li>
+				    <li><a href="javascript:void(0)" class="num">2</a></li>
+				    <li><a href="javascript:void(0)" class="num">3</a></li>
+				    <li><a href="javascript:void(0)" class="num">4</a></li>
+				    <li><a href="javascript:void(0)" class="num">5</a></li>
+				    <li><a href="javascript:void(0)" id="nextPage">&raquo;</a></li>
+				</ul>
+	        </div>
         </div>
         
-        <!-- 分页 -->
-        <!-- <div class="page">
-        	<ul class="pagination">
-			    <li><a href="#">&laquo;</a></li>
-			    <li><a href="#">1</a></li>
-			    <li><a href="#">2</a></li>
-			    <li><a href="#">3</a></li>
-			    <li><a href="#">4</a></li>
-			    <li><a href="#">5</a></li>
-			    <li><a href="#">&raquo;</a></li>
-			</ul>
-        </div> -->
+       
     </div>
     
     
-    <%-- <%@include file="./booter.jsp" %> --%>
+    <%@include file="./booter.jsp" %>
 </body>
 <!--<script src="http://cdn.staticfile.org/jquery/2.1.1-rc2/jquery.min.js"></script>-->
 <script src="js/jquery-1.8.2.js"></script>
@@ -166,5 +112,14 @@
         ],
         endDate: '2017-08-31'*/
     });
+</script>
+<script type="text/javascript">
+	function departJobFair(index){
+		alert("报名成功!!!");
+		var btn_depart = document.getElementById("btn_depart" + index);
+		btn_depart.style.borderColor = "gray";
+		/* btn_depart.style.color = "green"; */
+		btn_depart.style.backgroundImage = "linear-gradient(to bottom,gray,gray)";
+	}
 </script>
 </html>

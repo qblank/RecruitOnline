@@ -26,7 +26,7 @@
 	                </a>
 	            <div class="compus" id="compus">
 	                <ul>
-	                    <li><a href="index.html">我的校园</a></li>
+	                    <li><a href="${pageContext.request.contextPath }/user_noticeJsp.action?pageId=1">我的校园</a></li>
 	                    <li><a href="${pageContext.request.contextPath }/resume_resumeJsp.action">简历管理</a></li>
 	                    <li><a href="${pageContext.request.contextPath }/job_jobFair.action">我的招聘会</a></li>
 	                </ul>
@@ -36,9 +36,9 @@
             <c:if test="${empty sessionUser}">
             	<li></li>
             </c:if>
-            <li><a href="#">找全职</a></li>
-            <li><a href="#">找兼职</a></li>
-            <li><a href="jobFair.html">招聘会</a></li>
+            <!-- <li><a href="#">找全职</a></li>
+            <li><a href="#">找兼职</a></li> -->
+            <li><a href="${pageContext.request.contextPath }/job_jobFair.action">招聘会</a></li>
             <c:if test="${not empty sessionUser}">
 	            <li id="my">
 	                <a href="#">

@@ -24,7 +24,7 @@ $(function(){
      */
     function appendA(ele){
         for(var i = 0;i<ele.length;i++){
-            $(".detail_all").append("<a href='#'>" + ele[i] +"</a>");
+            $(".detail_all").append("<a href='job_searchPage.action'>" + ele[i] +"</a>");
         }
     }
     /**
@@ -84,11 +84,11 @@ $(function(){
         curText = $(this).text();
         append(curText);
     });
-    $("#detail").mouseover(function(){
+    $("#detail").mouseenter(function(){
         append(curText);
     });
     $("#detail").mouseover(function(){
-        append(curText);
+        /*append(curText);*/
         $("#detail").show();
     });
     $("#left_nav li").mouseout(function () {
@@ -100,6 +100,7 @@ $(function(){
     $("#detail").mouseout(function(){
         $("#detail").hide();
     });
+    
 
     //楼层跳跃
     (function(){

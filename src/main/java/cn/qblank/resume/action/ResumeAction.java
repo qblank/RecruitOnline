@@ -141,7 +141,7 @@ public class ResumeAction extends ActionSupport implements ModelDriven<Resume>,S
 	}
 	
 	/**
-	 * 将网页内容导出pdf文档
+	 * 将简历导出pdf文档
 	 */
 	public String exportResume() throws Exception{
 		ServletInputStream in = request.getInputStream();

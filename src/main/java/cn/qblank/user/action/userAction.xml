@@ -16,6 +16,8 @@
 			<result name="register" type="redirectAction">user_loginJsp.action</result>
 			<!-- 进入通知界面 -->
 			<result name="notice">/WEB-INF/jsp/notice.jsp</result>
+			<!-- 进入验证码界面 -->
+			<result name="identityCode">/WEB-INF/jsp/identityCode.jsp</result>
 			
 			<!-- 测试 -->
 			<result name="test">/WEB-INF/jsp/control/test.jsp</result>

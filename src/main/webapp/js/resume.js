@@ -81,4 +81,7 @@ function postMsg(ele,target,id){
 	jump(tabWraps,liArr);
 })();
 
+//参加招聘会
+
+
 

@@ -34,3 +34,13 @@ $(function(){
 
     $("#login_wrap").fadeIn(2000);
 });
+
+
+
+
+
+//验证码
+var secode = document.getElementById("secode");
+secode.onclick = function(){
+	secode.setAttribute("src","/Recruit/user_identityCode.action?time=" + new Date().getTime());
+}

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import cn.qblank.job.dao.IJobDao;
 import cn.qblank.job.entity.Firm;
+import cn.qblank.job.entity.JobFair;
 import cn.qblank.job.entity.Position;
 import cn.qblank.job.service.IJobService;
 
@@ -38,6 +39,16 @@ public class JobServiceImpl implements IJobService{
 	@Override
 	public List<Position> findPosByFirm(Firm firm) {
 		return jobDao.findPosByFirm(firm);
+	}
+
+	@Override
+	public List<JobFair> findAllJobFair() {
+		return jobDao.findAllJobFair();
+	}
+
+	@Override
+	public List<Firm> findFirmByName(String searchName) {
+		return jobDao.findFirmByName(searchName);
 	}
 
 }

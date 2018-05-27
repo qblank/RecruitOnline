@@ -9,9 +9,9 @@
 <meta http-equiv="Cache-Control" content="no-siteapp" />
  <link href="resource/assets/css/bootstrap.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="resource/css/style.css"/>       
-        <link href="resource/assets/css/codemirror.css" rel="stylesheet">
         <link rel="stylesheet" href="resource/assets/css/ace.min.css" />
         <link rel="stylesheet" href="resource/font/css/font-awesome.min.css" />
+        <link href="resource/assets/css/codemirror.css" rel="stylesheet">
         <!--[if lte IE 8]>
 		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
 		<![endif]-->

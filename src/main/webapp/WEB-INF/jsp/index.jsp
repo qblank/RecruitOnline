@@ -254,7 +254,7 @@
 	                    <li>
 	                        <a href="${pageContext.request.contextPath }/job_firmDetail.action?fid=${firmIT.fid}">
 	                            <div class="pro_des">
-	                                <img src="${firmIT.flogo}" width="130px"><br>
+	                                <img src="${firmIT.flogo}" width="130px" height="70px"><br>
 	                                <span class="des_word">${firmIT.fname}</span>
 	                            </div>
 	                            <div class="mask">${firmIT.fname}</div>
@@ -262,60 +262,6 @@
 	
 	                    </li>
 	                    </c:forEach>
-	                    <li>
-	                        <a href="html/jobdetail.html">
-	                            <div class="pro_des">
-	                                <img src="images/jobs/job.jpg" width="130px"><br>
-	                                <span class="des_word">邮政</span>
-	                            </div>
-	                            <div class="mask">我是邮政</div>
-	                        </a>
-	                    </li>
-	                    <li>
-	                        <a href="html/jobdetail.html">
-	                            <div class="pro_des">
-	                                <img src="images/jobs/job.jpg" width="130px"><br>
-	                                <span class="des_word">邮政</span>
-	                            </div>
-	                            <div class="mask">我是邮政</div>
-	                        </a>
-	                    </li>
-	                    <li>
-	                        <a href="html/jobdetail.html">
-	                            <div class="pro_des">
-	                                <img src="images/jobs/job.jpg" width="130px"><br>
-	                                <span class="des_word">邮政</span>
-	                            </div>
-	                            <div class="mask">我是邮政</div>
-	                        </a>
-	                    </li>
-	                    <li>
-	                        <a href="html/jobdetail.html">
-	                            <div class="pro_des">
-	                                <img src="images/jobs/job.jpg" width="130px"><br>
-	                                <span class="des_word">邮政</span>
-	                            </div>
-	                            <div class="mask">我是邮政</div>
-	                        </a>
-	                    </li>
-	                    <li>
-	                        <a href="html/jobdetail.html">
-	                            <div class="pro_des">
-	                                <img src="images/jobs/job.jpg" width="130px"><br>
-	                                <span class="des_word">邮政</span>
-	                            </div>
-	                            <div class="mask">我是邮政</div>
-	                        </a>
-	                    </li>
-	                    <li>
-	                        <a href="html/jobdetail.html">
-	                            <div class="pro_des">
-	                                <img src="images/jobs/job.jpg" width="130px"><br>
-	                                <span class="des_word">邮政</span>
-	                            </div>
-	                            <div class="mask">我是邮政</div>
-	                        </a>
-	                    </li>
 	                </ul>
 	            </div>
 	        </div>
